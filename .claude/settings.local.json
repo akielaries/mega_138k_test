@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Read(//home/akiel/trunk/OSS/TangMega-138KPro-example/sfp+/10G_Serial_Ethernet/**)",
-      "Read(//home/akiel/trunk/OSS/TangMega-138KPro-example/sfp+/customized_phy/**)",
-      "Read(//home/akiel/trunk/OSS/TangMega-138KPro-example/sfp+/docs/**)"
-    ]
-  }
-}
