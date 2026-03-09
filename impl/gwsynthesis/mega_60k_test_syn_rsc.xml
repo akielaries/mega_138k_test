@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top" Register="26" Lut="88" T_Register="7380(26)" T_Alu="362(0)" T_Lut="9048(88)" T_MULT27X36="2(0)" T_Bsram="144(0)">
+ <SubModule name="u_Gowin_PLL" T_Register="39(0)" T_Alu="16(0)" T_Lut="58(0)">
+  <SubModule name="u_pll"/>
+  <SubModule name="u_pll_init" Register="39" Alu="16" Lut="58" T_Register="39(39)" T_Alu="16(16)" T_Lut="58(58)"/>
+ </SubModule>
+ <SubModule name="Cortex_M1_instance" Register="6711" Alu="280" Lut="8517" MULT27X36="2" Bsram="136" T_Register="6711(6711)" T_Alu="280(280)" T_Lut="8517(8517)" T_MULT27X36="2(2)" T_Bsram="136(136)"/>
+ <SubModule name="ahb_ram_inst" Lut="9" Bsram="8" T_Lut="9(9)" T_Bsram="8(8)"/>
+ <SubModule name="gwct_inst" T_Register="386(0)" T_Alu="8(0)" T_Lut="217(0)">
+  <SubModule name="uart_inst" Register="71" Lut="96" T_Register="71(71)" T_Lut="96(96)"/>
+  <SubModule name="packet_inst" Register="227" Alu="8" Lut="107" T_Register="227(227)" T_Alu="8(8)" T_Lut="107(107)"/>
+  <SubModule name="apb_master_inst" Register="88" Lut="14" T_Register="88(88)" T_Lut="14(14)"/>
+ </SubModule>
+ <SubModule name="apb_memmap_inst" Lut="46" T_Register="111(0)" T_Lut="98(46)">
+  <SubModule name="sysinfo_inst" T_Register="12(0)" T_Lut="17(0)">
+   <SubModule name="u_regs" Register="12" Lut="17" T_Register="12(12)" T_Lut="17(17)"/>
+  </SubModule>
+  <SubModule name="gpio_inst" T_Register="99(0)" T_Lut="35(0)">
+   <SubModule name="u_regs" Register="99" Lut="35" T_Register="99(99)" T_Lut="35(35)"/>
+  </SubModule>
+ </SubModule>
+ <SubModule name="sfp_inst" Register="27" Alu="26" Lut="27" T_Register="107(27)" T_Alu="58(26)" T_Lut="61(27)">
+  <SubModule name="serdes_top_inst"/>
+  <SubModule name="ln1_prbs7" Register="40" Alu="16" Lut="17" T_Register="40(40)" T_Alu="16(16)" T_Lut="17(17)"/>
+  <SubModule name="ln0_prbs7" Register="40" Alu="16" Lut="17" T_Register="40(40)" T_Alu="16(16)" T_Lut="17(17)"/>
+ </SubModule>
+</Module>

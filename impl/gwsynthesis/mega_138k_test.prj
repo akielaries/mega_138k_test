@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-synthesis-project>
+<Project>
+    <Version>beta</Version>
+    <Device id="GW5AST-138B" package="FCPBGA676A" speed="2" partNumber="GW5AST-LV138FPG676AC2/I1"/>
+    <FileList>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/ahb1_sram.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/apb_ahb_bridge.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/apb_memmap.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/gowin_empu_m1.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll/gowin_pll.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll/gowin_pll_mod.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/gpio.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/gpio_regs.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/gwct_apb_master.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/gwct_bridge.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/gwct_packet.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/gwct_uart.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/pll_init.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/prbs7_chk.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/prbs7_gen.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/prbs7_single_channel.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/sfp_loopback.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/sysinfo.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/sysinfo_regs.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/top.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/serdes/customized_phy/customized_phy.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/serdes/serdes.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/sfp_regs.v" type="verilog"/>
+    </FileList>
+    <OptionList>
+        <Option type="disable_insert_pad" value="0"/>
+        <Option type="enable_dsrm" value="0"/>
+        <Option type="global_freq" value="100.000"/>
+        <Option type="looplimit" value="2000"/>
+        <Option type="output_file" value="/home/akiel/trunk/pub/mega_138k_test/impl/gwsynthesis/mega_138k_test.vg"/>
+        <Option type="print_all_synthesis_warning" value="0"/>
+        <Option type="ram_rw_check" value="0"/>
+        <Option type="vcc" value="0.9"/>
+        <Option type="verilog_language" value="verilog-2001"/>
+        <Option type="vhdl_language" value="vhdl-1993"/>
+    </OptionList>
+</Project>

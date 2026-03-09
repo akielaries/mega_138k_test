@@ -1,0 +1,110 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/ahb1_sram.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/apb_ahb_bridge.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/apb_memmap.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/gowin_empu_m1.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll/gowin_pll.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll/gowin_pll_mod.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/gpio.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/gpio_regs.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/gwct_apb_master.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/gwct_bridge.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/gwct_packet.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/gwct_uart.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/pll_init.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/prbs7_chk.v'
+WARN  (EX2950) : Extra semicolon is not allowed here in this dialect, use SystemVerilog mode instead("/home/akiel/trunk/pub/mega_138k_test/src/prbs7_chk.v":51)
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/prbs7_gen.v'
+WARN  (EX2950) : Extra semicolon is not allowed here in this dialect, use SystemVerilog mode instead("/home/akiel/trunk/pub/mega_138k_test/src/prbs7_gen.v":44)
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/prbs7_single_channel.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/sfp_loopback.v'
+Undeclared symbol 'ln1_pcs_rx_rst', assumed default net type 'wire'("/home/akiel/trunk/pub/mega_138k_test/src/sfp_loopback.v":115)
+Undeclared symbol 'ln1_pcs_tx_rst', assumed default net type 'wire'("/home/akiel/trunk/pub/mega_138k_test/src/sfp_loopback.v":116)
+Undeclared symbol 'ln0_pcs_rx_rst', assumed default net type 'wire'("/home/akiel/trunk/pub/mega_138k_test/src/sfp_loopback.v":143)
+Undeclared symbol 'ln0_pcs_tx_rst', assumed default net type 'wire'("/home/akiel/trunk/pub/mega_138k_test/src/sfp_loopback.v":144)
+WARN  (EX3638) : 'ln0_pcs_tx_rst' is already implicitly declared on line 144("/home/akiel/trunk/pub/mega_138k_test/src/sfp_loopback.v":236)
+WARN  (EX3638) : 'ln1_pcs_tx_rst' is already implicitly declared on line 116("/home/akiel/trunk/pub/mega_138k_test/src/sfp_loopback.v":237)
+WARN  (EX3638) : 'ln0_pcs_rx_rst' is already implicitly declared on line 143("/home/akiel/trunk/pub/mega_138k_test/src/sfp_loopback.v":238)
+WARN  (EX3638) : 'ln1_pcs_rx_rst' is already implicitly declared on line 115("/home/akiel/trunk/pub/mega_138k_test/src/sfp_loopback.v":239)
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/sysinfo.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/sysinfo_regs.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/top.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/serdes/customized_phy/customized_phy.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/serdes/serdes.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/sfp_regs.v'
+WARN  (EX3073) : Port 'APB1PPROT' remains unconnected for this instance("/home/akiel/trunk/pub/mega_138k_test/src/top.v":228)
+Compiling module 'top'("/home/akiel/trunk/pub/mega_138k_test/src/top.v":17)
+Compiling module 'Gowin_PLL'("/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll/gowin_pll.v":1)
+Compiling module 'Gowin_PLL_MOD'("/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll/gowin_pll_mod.v":11)
+Compiling module 'PLL_INIT(CLK_PERIOD=20,MULTI_FAC=16)'("/home/akiel/trunk/pub/mega_138k_test/src/pll_init.v":3)
+WARN  (EX3791) : Expression size 5 truncated to fit in target size 4("/home/akiel/trunk/pub/mega_138k_test/src/pll_init.v":179)
+WARN  (EX3791) : Expression size 18 truncated to fit in target size 17("/home/akiel/trunk/pub/mega_138k_test/src/pll_init.v":207)
+Compiling module 'Gowin_EMPU_M1_Top'("/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/gowin_empu_m1.v":66261)
+Compiling module '**'("/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/gowin_empu_m1.v":40731)
+Compiling module '**'("/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/gowin_empu_m1.v":66260)
+Compiling module 'ahb_sram'("/home/akiel/trunk/pub/mega_138k_test/src/ahb1_sram.v":2)
+Extracting RAM for identifier 'mem'("/home/akiel/trunk/pub/mega_138k_test/src/ahb1_sram.v":23)
+Compiling module 'gwct_debug_bridge_n'("/home/akiel/trunk/pub/mega_138k_test/src/gwct_bridge.v":57)
+Compiling module 'gwct_uart'("/home/akiel/trunk/pub/mega_138k_test/src/gwct_uart.v":17)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("/home/akiel/trunk/pub/mega_138k_test/src/gwct_uart.v":93)
+WARN  (EX3791) : Expression size 4 truncated to fit in target size 3("/home/akiel/trunk/pub/mega_138k_test/src/gwct_uart.v":104)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("/home/akiel/trunk/pub/mega_138k_test/src/gwct_uart.v":107)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("/home/akiel/trunk/pub/mega_138k_test/src/gwct_uart.v":120)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("/home/akiel/trunk/pub/mega_138k_test/src/gwct_uart.v":173)
+WARN  (EX3791) : Expression size 4 truncated to fit in target size 3("/home/akiel/trunk/pub/mega_138k_test/src/gwct_uart.v":184)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("/home/akiel/trunk/pub/mega_138k_test/src/gwct_uart.v":190)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 16("/home/akiel/trunk/pub/mega_138k_test/src/gwct_uart.v":198)
+Compiling module 'gwct_packet'("/home/akiel/trunk/pub/mega_138k_test/src/gwct_packet.v":18)
+Compiling module 'gwct_apb_master'("/home/akiel/trunk/pub/mega_138k_test/src/gwct_apb_master.v":13)
+Compiling module 'apb_memmap'("/home/akiel/trunk/pub/mega_138k_test/src/apb_memmap.v":1)
+Compiling module 'system_info'("/home/akiel/trunk/pub/mega_138k_test/src/sysinfo.v":1)
+Compiling module 'sysinfo_regs'("/home/akiel/trunk/pub/mega_138k_test/src/sysinfo_regs.v":7)
+Compiling module 'gpio'("/home/akiel/trunk/pub/mega_138k_test/src/gpio.v":1)
+Compiling module 'gpio_regs'("/home/akiel/trunk/pub/mega_138k_test/src/gpio_regs.v":7)
+Compiling module 'sfp_regs'("/home/akiel/trunk/pub/mega_138k_test/src/sfp_regs.v":7)
+Compiling module 'sfp_loopback'("/home/akiel/trunk/pub/mega_138k_test/src/sfp_loopback.v":14)
+Compiling module 'SerDes_Top'("/home/akiel/trunk/pub/mega_138k_test/src/serdes/serdes.v":11)
+Compiling module 'Customized_PHY_Top'("/home/akiel/trunk/pub/mega_138k_test/src/serdes/customized_phy/customized_phy.v":10)
+WARN  (EX2565) : Input 'Q0_FABRIC_CMU_CK_REF_O' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("/home/akiel/trunk/pub/mega_138k_test/src/serdes/serdes.v":591)
+WARN  (EX2565) : Input 'Q0_FABRIC_CMU1_CK_REF_O' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("/home/akiel/trunk/pub/mega_138k_test/src/serdes/serdes.v":591)
+WARN  (EX2565) : Input 'Q0_FABRIC_CMU1_OK_O' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("/home/akiel/trunk/pub/mega_138k_test/src/serdes/serdes.v":591)
+WARN  (EX2565) : Input 'Q0_FABRIC_CMU_OK_O' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("/home/akiel/trunk/pub/mega_138k_test/src/serdes/serdes.v":591)
+Compiling module 'prbs7_single_channel'("/home/akiel/trunk/pub/mega_138k_test/src/prbs7_single_channel.v":1)
+Compiling module '**'("/home/akiel/trunk/pub/mega_138k_test/src/prbs7_gen.v":44)
+WARN  (EX3791) : Expression size ** truncated to fit in target size **("/home/akiel/trunk/pub/mega_138k_test/src/prbs7_gen.v":44)
+Compiling module '**'("/home/akiel/trunk/pub/mega_138k_test/src/prbs7_chk.v":51)
+WARN  (EX3791) : Expression size ** truncated to fit in target size **("/home/akiel/trunk/pub/mega_138k_test/src/prbs7_chk.v":51)
+WARN  (EX1998) : Net 'ln0_pcs_tx_rst' does not have a driver("/home/akiel/trunk/pub/mega_138k_test/src/sfp_loopback.v":144)
+WARN  (EX1998) : Net 'ln1_pcs_tx_rst' does not have a driver("/home/akiel/trunk/pub/mega_138k_test/src/sfp_loopback.v":116)
+WARN  (EX1998) : Net 'ln0_pcs_rx_rst' does not have a driver("/home/akiel/trunk/pub/mega_138k_test/src/sfp_loopback.v":143)
+WARN  (EX1998) : Net 'ln1_pcs_rx_rst' does not have a driver("/home/akiel/trunk/pub/mega_138k_test/src/sfp_loopback.v":115)
+NOTE  (EX0101) : Current top module is "top"
+WARN  (EX0211) : The output port "error_stat_o[7]" of module "prbs7_chk(INIT=8'b11111111)" has no driver, assigning undriven bits to Z, simulation mismatch possible("/home/akiel/trunk/pub/mega_138k_test/src/prbs7_chk.v":51)
+WARN  (EX0211) : The output port "error_stat_o[6]" of module "prbs7_chk(INIT=8'b11111111)" has no driver, assigning undriven bits to Z, simulation mismatch possible("/home/akiel/trunk/pub/mega_138k_test/src/prbs7_chk.v":51)
+WARN  (EX0211) : The output port "error_stat_o[5]" of module "prbs7_chk(INIT=8'b11111111)" has no driver, assigning undriven bits to Z, simulation mismatch possible("/home/akiel/trunk/pub/mega_138k_test/src/prbs7_chk.v":51)
+WARN  (EX0211) : The output port "error_stat_o[4]" of module "prbs7_chk(INIT=8'b11111111)" has no driver, assigning undriven bits to Z, simulation mismatch possible("/home/akiel/trunk/pub/mega_138k_test/src/prbs7_chk.v":51)
+WARN  (EX0211) : The output port "error_stat_o[3]" of module "prbs7_chk(INIT=8'b11111111)" has no driver, assigning undriven bits to Z, simulation mismatch possible("/home/akiel/trunk/pub/mega_138k_test/src/prbs7_chk.v":51)
+WARN  (EX0211) : The output port "error_stat_o[2]" of module "prbs7_chk(INIT=8'b11111111)" has no driver, assigning undriven bits to Z, simulation mismatch possible("/home/akiel/trunk/pub/mega_138k_test/src/prbs7_chk.v":51)
+WARN  (EX0211) : The output port "error_stat_o[1]" of module "prbs7_chk(INIT=8'b11111111)" has no driver, assigning undriven bits to Z, simulation mismatch possible("/home/akiel/trunk/pub/mega_138k_test/src/prbs7_chk.v":51)
+WARN  (EX0211) : The output port "error_stat_o[0]" of module "prbs7_chk(INIT=8'b11111111)" has no driver, assigning undriven bits to Z, simulation mismatch possible("/home/akiel/trunk/pub/mega_138k_test/src/prbs7_chk.v":51)
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+WARN  (NL0002) : The module "Customized_PHY_Top" instantiated to "Customized_PHY_Top_inst" is swept in optimizing("/home/akiel/trunk/pub/mega_138k_test/src/serdes/serdes.v":591)
+[95%] Generate netlist file "/home/akiel/trunk/pub/mega_138k_test/impl/gwsynthesis/mega_138k_test.vg" completed
+[100%] Generate report file "/home/akiel/trunk/pub/mega_138k_test/impl/gwsynthesis/mega_138k_test_syn.rpt.html" completed
+GowinSynthesis finish

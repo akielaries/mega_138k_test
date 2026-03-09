@@ -1,0 +1,987 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//ENhttp://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Power Analysis Report</title>
+<style type="text/css">
+body { font-family: Verdana, Arial, sans-serif; font-size: 12px; }
+div#main_wrapper { width: 100%; }
+div#content { margin-left: 350px; margin-right: 30px; }
+div#catalog_wrapper {position: fixed; top: 30px; width: 350px; float: left; }
+div#catalog ul { list-style-type: none; }
+div#catalog li { text-align: left; list-style-type:circle; color: #0084ff; margin-top: 3px; margin-bottom: 3px; }
+div#catalog a { display:inline-block; text-decoration: none; color: #0084ff; font-weight: bold; padding: 3px; }
+div#catalog a:visited { color: #0084ff; }
+div#catalog a:hover { color: #fff; background: #0084ff; }
+hr { margin-top: 30px; margin-bottom: 30px; }
+h1, h3 { text-align: center; }
+h1 {margin-top: 50px; }
+table, th, td {white-space:pre;  border: 1px solid #aaa; }
+table { border-collapse:collapse; margin-top: 10px; margin-bottom: 20px; width: 100%; }
+th, td { padding: 5px 5px 5px 5px; }
+th { color: #fff; font-weight: bold; background-color: #0084ff; }
+table.summary_table td.label { width: 24%; min-width: 200px; background-color: #dee8f4; }
+table.thermal_table td.label { width: 24%; min-width: 200px; background-color: #dee8f4; }
+table.Configure_table td.label { width: 24%; min-width: 200px; background-color: #dee8f4; }
+table.detail_table th.label {  min-width: 8%; width: 8%; }
+</style>
+</head>
+<body>
+<div id="main_wrapper">
+<div id="catalog_wrapper">
+<div id="catalog">
+<ul>
+<li><a href="#Message" style=" font-size: 16px;">Power Messages</a>
+<ul>
+<li><a href="#Configure_Info" style=" font-size: 14px;">Configure Information</a></li>
+</ul>
+</li>
+<li><a href="#Summary" style=" font-size: 16px;">Power Summary</a>
+<ul>
+<li><a href="#Power_Info" style=" font-size: 14px;">Power Information</a></li>
+<li><a href="#Thermal_Info" style=" font-size: 14px;">Thermal Information</a></li>
+<li><a href="#Supply_Summary" style=" font-size: 14px;">Supply Information</a></li>
+</ul>
+</li>
+<li><a href="#Detail" style=" font-size: 16px;">Power Details</a>
+<ul>
+<li><a href="#By_Block_Type" style=" font-size: 14px;">Power By Block Type</a></li>
+<li><a href="#By_Hierarchy" style=" font-size: 14px;">Power By Hierarchy</a></li>
+<li><a href="#By_Clock_Domain" style=" font-size: 14px;">Power By Clock Domain</a></li>
+</ul>
+</li>
+</ul>
+</div><!-- catalog -->
+</div><!-- catalog_wrapper -->
+<div id="content">
+<h1><a name="Message">Power Messages</a></h1>
+<table class="summary_table">
+<tr>
+<td class="label">Report Title</td>
+<td>Power Analysis Report</td>
+</tr>
+<tr>
+<td class="label">Design File</td>
+<td>/home/akiel/trunk/pub/mega_138k_test/impl/gwsynthesis/mega_60k_test.vg</td>
+</tr>
+<tr>
+<td class="label">Physical Constraints File</td>
+<td>/home/akiel/trunk/pub/mega_138k_test/src/pins.cst</td>
+</tr>
+<tr>
+<td class="label">Timing Constraints File</td>
+<td>/home/akiel/trunk/pub/mega_138k_test/src/mega_60k_test.sdc</td>
+</tr>
+<tr>
+<td class="label">Tool Version</td>
+<td>V1.9.12.01</td>
+</tr>
+<tr>
+<td class="label">Part Number</td>
+<td>GW5AST-LV138FPG676AC2/I1</td>
+</tr>
+<tr>
+<td class="label">Device</td>
+<td>GW5AST-138</td>
+</tr>
+<tr>
+<td class="label">Device Version</td>
+<td>B</td>
+</tr>
+<tr>
+<td class="label">Created Time</td>
+<td>Sun Mar  8 16:47:17 2026
+</td>
+</tr>
+<tr>
+<td class="label">Legal Announcement</td>
+<td>Copyright (C)2014-2025 Gowin Semiconductor Corporation. All rights reserved.</td>
+</tr>
+</table>
+<h2><a name="Configure_Info">Configure Information:</a></h2>
+<table class="summary_table">
+<tr>
+<td class="label">Grade</td>
+<td>Commercial</td>
+</tr>
+<tr>
+<td class="label">Process</td>
+<td>Typical</td>
+</tr>
+<tr>
+<td class="label">Ambient Temperature</td>
+<td>25.000
+</tr>
+<tr>
+<td class="label">Use Custom Theta JA</td>
+<td>false</td>
+</tr>
+<tr>
+<td class="label">Heat Sink</td>
+<td>None</td>
+</tr>
+<tr>
+<td class="label">Air Flow</td>
+<td>LFM_0</td>
+</tr>
+<tr>
+<td class="label">Use Custom Theta SA</td>
+<td>false</td>
+</tr>
+<tr>
+<td class="label">Board Thermal Model</td>
+<td>None</td>
+</tr>
+<tr>
+<td class="label">Use Custom Theta JB</td>
+<td>false</td>
+</tr>
+<tr>
+<td class="label">Related Vcd File</td>
+<td></td>
+</tr>
+<tr>
+<td class="label">Related Saif File</td>
+<td></td>
+</tr>
+<tr>
+<td class="label">Filter Glitches</td>
+<td>false</td>
+</tr>
+<tr>
+<td class="label">Default IO Toggle Rate</td>
+<td>0.125</td>
+</tr>
+<tr>
+<td class="label">Default Remain Toggle Rate</td>
+<td>0.125</td>
+</tr>
+</table>
+<h1><a name="Summary">Power Summary</a></h1>
+<h2><a name="Power_Info">Power Information:</a></h2>
+<table class="summary_table">
+<tr>
+<td class="label">Total Power (mW)</td>
+<td>388.546</td>
+</tr>
+<tr>
+<td class="label">Quiescent Power (mW)</td>
+<td>121.570</td>
+</tr>
+<tr>
+<td class="label">Dynamic Power (mW)</td>
+<td>266.976</td>
+</tr>
+</table>
+<h2><a name="Thermal_Info">Thermal Information:</a></h2>
+<table class="summary_table">
+<tr>
+<td class="label">Junction Temperature</td>
+<td>29.749</td>
+</tr>
+<tr>
+<td class="label">Theta JA</td>
+<td>12.222</td>
+</tr>
+<tr>
+<td class="label">Max Allowed Ambient Temperature</td>
+<td>80.251</td>
+</tr>
+</table>
+<h2><a name="Supply_Summary">Supply Information:</a></h2>
+<table class="summary_table">
+<tr>
+<th class="label">Voltage Source</th>
+<th class="label">Voltage</th>
+<th class="label">Dynamic Current(mA)</th>
+<th class="label">Quiescent Current(mA)</th>
+<th class="label">Power(mW)</th>
+</tr>
+<tr>
+<td>VCC</td>
+<td>0.900</td>
+<td>286.000</td>
+<td>99.986</td>
+<td>347.388</td>
+</tr>
+<tr>
+<td>VCCX</td>
+<td>1.800</td>
+<td>2.649</td>
+<td>9.000</td>
+<td>20.968</td>
+</tr>
+<tr>
+<td>VCCIO15</td>
+<td>1.500</td>
+<td>2.205</td>
+<td>2.199</td>
+<td>6.605</td>
+</tr>
+<tr>
+<td>VCCIO33</td>
+<td>3.300</td>
+<td>0.455</td>
+<td>1.480</td>
+<td>6.384</td>
+</tr>
+<tr>
+<td>VCCLDO</td>
+<td>1.200</td>
+<td>0.000</td>
+<td>6.000</td>
+<td>7.200</td>
+</tr>
+</table>
+<h1><a name="Detail">Power Details</a></h1>
+<h2><a name="By_Block_Type">Power By Block Type:</a></h2>
+<table class="detail_table">
+<tr>
+<th class="label">Block Type</th>
+<th class="label">Total Power(mW)</th>
+<th class="label">Static Power(mW)</th>
+<th class="label">Average Toggle Rate(millions of transitions/sec)</th>
+</tr>
+<tr>
+<td>Logic</td>
+<td>2.630</td>
+<td>NA</td>
+<td>6.072</td>
+</tr>
+<tr>
+<td>IO</td>
+<td>27.918
+<td>15.639
+<td>20.356
+</tr>
+<tr>
+<td>BSRAM</td>
+<td>220.950
+<td>NA</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>PLL</td>
+<td>9.648
+<td>NA</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>DDRDLL</td>
+<td>16.589
+<td>NA</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>DQS</td>
+<td>41.634
+<td>NA</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>DSP</td>
+<td>4.873
+<td>NA</td>
+<td>3.883
+</tr>
+</table>
+<h2><a name="By_Hierarchy">Power By Hierarchy:</a></h2>
+<table class="detail_table">
+<tr>
+<th class="label">Hierarchy Entity</th>
+<th class="label">Total Power(mW)</th>
+<th class="label">Block Dynamic Power(mW)</th>
+</tr>
+<tr>
+<td>top</td>
+<td>296.323</td>
+<td>296.323(296.306)</td>
+<tr>
+<td>top/Cortex_M1_instance/</td>
+<td>266.682</td>
+<td>266.682(266.681)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/</td>
+<td>164.420</td>
+<td>164.420(164.420)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/</td>
+<td>164.420</td>
+<td>164.420(164.420)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/</td>
+<td>6.143</td>
+<td>6.143(6.142)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_ahb/</td>
+<td>0.097</td>
+<td>0.097(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_core/</td>
+<td>5.523</td>
+<td>5.523(5.523)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_core/u_ctrl/</td>
+<td>0.185</td>
+<td>0.185(0.058)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_core/u_ctrl/u_decode/</td>
+<td>0.022</td>
+<td>0.022(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_core/u_ctrl/u_excpt/</td>
+<td>0.032</td>
+<td>0.032(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_core/u_ctrl/u_r_list_add/</td>
+<td>0.004</td>
+<td>0.004(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_core/u_dp/</td>
+<td>5.312</td>
+<td>5.312(5.160)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_core/u_dp/u_alu_dec/</td>
+<td>0.055</td>
+<td>0.055(0.046)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_core/u_dp/u_alu_dec/u_adder/</td>
+<td>0.046</td>
+<td>0.046(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_core/u_dp/u_mem_ctl/</td>
+<td>0.006</td>
+<td>0.006(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_core/u_dp/u_mul_shft/</td>
+<td>4.913</td>
+<td>4.913(4.913)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_core/u_dp/u_mul_shft/u_mul/</td>
+<td>4.882</td>
+<td>4.882(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_core/u_dp/u_mul_shft/u_shft/</td>
+<td>0.030</td>
+<td>0.030(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_core/u_dp/u_r_bank/</td>
+<td>0.144</td>
+<td>0.144(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_core/u_dp/u_rf1_mux/</td>
+<td>0.042</td>
+<td>0.042(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_core/u_fetch/</td>
+<td>0.026</td>
+<td>0.026(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_dap_ahb_ap/</td>
+<td>0.080</td>
+<td>0.080(0.080)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_dap_ahb_ap/uDAPAhbApAhbSync/</td>
+<td>0.001</td>
+<td>0.001(0.001)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_dap_ahb_ap/uDAPAhbApAhbSync/uAhbApAhbSync0/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_dap_ahb_ap/uDAPAhbApAhbSync/uAhbApAhbSync1/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_dap_ahb_ap/uDAPAhbApAhbSync/uAhbApAhbSync2/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_dap_ahb_ap/uDAPAhbApAhbSync/uAhbApAhbSync3/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_dap_ahb_ap/uDAPAhbApDapSync/</td>
+<td>0.001</td>
+<td>0.001(0.001)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_dap_ahb_ap/uDAPAhbApDapSync/uAhbApDapSync0/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_dap_ahb_ap/uDAPAhbApDapSync/uAhbApDapSync2/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_dap_ahb_ap/uDAPAhbApDapSync/uAhbApDapSync3/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_dap_ahb_ap/uDAPAhbApDapSync/uAhbApDapSync4/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_dap_ahb_ap/uDAPAhbApMst/</td>
+<td>0.029</td>
+<td>0.029(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_dap_ahb_ap/uDAPAhbApSlv/</td>
+<td>0.050</td>
+<td>0.050(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_debug_sys/</td>
+<td>0.221</td>
+<td>0.221(0.221)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_debug_sys/dbg_ahb_mux/</td>
+<td>0.052</td>
+<td>0.052(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_debug_sys/dbg_bpu/</td>
+<td>0.029</td>
+<td>0.029(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_debug_sys/dbg_ctl/</td>
+<td>0.022</td>
+<td>0.022(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_debug_sys/dbg_dw/</td>
+<td>0.101</td>
+<td>0.101(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_debug_sys/dbg_rom_tb/</td>
+<td>0.001</td>
+<td>0.001(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_debug_sys/dbg_tcm/</td>
+<td>0.016</td>
+<td>0.016(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_matrix/</td>
+<td>0.041</td>
+<td>0.041(0.041)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_matrix/u_matrix_dbg/</td>
+<td>0.009</td>
+<td>0.009(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_matrix/u_matrix_sys/</td>
+<td>0.032</td>
+<td>0.032(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_nvic/</td>
+<td>0.180</td>
+<td>0.180(0.180)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_nvic/u_ahb/</td>
+<td>0.106</td>
+<td>0.106(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_nvic/u_ahb_os/</td>
+<td>0.021</td>
+<td>0.021(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_nvic/u_main/</td>
+<td>0.004</td>
+<td>0.004(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_nvic/u_tree/</td>
+<td>0.049</td>
+<td>0.049(0.041)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_nvic/u_tree/u_pri_lvl0/</td>
+<td>0.032</td>
+<td>0.032(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_nvic/u_tree/u_pri_lvl2/</td>
+<td>0.002</td>
+<td>0.002(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_cortexm1/u_nvic/u_tree/u_pri_num1/</td>
+<td>0.007</td>
+<td>0.007(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_dapdecmux/</td>
+<td>0.006</td>
+<td>0.006(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_dtcm/</td>
+<td>79.118</td>
+<td>79.118(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_itcm/</td>
+<td>79.123</td>
+<td>79.123(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_swj_dp/</td>
+<td>0.031</td>
+<td>0.031(0.031)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_swj_dp/uDAPDpApbIf/</td>
+<td>0.018</td>
+<td>0.018(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_swj_dp/uDAPDpApbSync/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_swj_dp/uDAPDpApbSync/uSyncBusAbort/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_swj_dp/uDAPDpApbSync/uSyncBusReq/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_swj_dp/uDAPDpIMux/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_swj_dp/uDAPSwDpProtocol/</td>
+<td>0.012</td>
+<td>0.012(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_swj_dp/uDAPSwDpSync/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_swj_dp/uDAPSwDpSync/uCDBGPWRUPACK/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_swj_dp/uDAPSwDpSync/uCSYSPWRUPACK/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/M1_inst/u_CortexM1DbgIntegration_inst/u_swj_dp/uDAPSwDpSync/uSyncBusAck/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/</td>
+<td>102.261</td>
+<td>102.261(102.261)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/</td>
+<td>102.261</td>
+<td>102.261(102.261)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb10/</td>
+<td>0.001</td>
+<td>0.001(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb11/</td>
+<td>0.001</td>
+<td>0.001(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb12/</td>
+<td>0.001</td>
+<td>0.001(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb4/</td>
+<td>0.001</td>
+<td>0.001(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb5/</td>
+<td>0.001</td>
+<td>0.001(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb9/</td>
+<td>0.001</td>
+<td>0.001(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_can/</td>
+<td>0.001</td>
+<td>0.001(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/</td>
+<td>102.063</td>
+<td>102.063(102.012)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/</td>
+<td>102.012</td>
+<td>102.012(102.012)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/</td>
+<td>102.012</td>
+<td>102.012(102.012)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_ddr_phy_top/</td>
+<td>80.252</td>
+<td>80.252(63.611)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_ddr_phy_top/ddr_sync/</td>
+<td>0.015</td>
+<td>0.015(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_ddr_phy_top/u_ddr_init/</td>
+<td>0.136</td>
+<td>0.136(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/</td>
+<td>63.293</td>
+<td>63.293(63.289)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/</td>
+<td>31.624</td>
+<td>31.624(31.588)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_ddr_phy_data_io/</td>
+<td>20.832</td>
+<td>20.832(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[0].u_ddr_phy_data_lane/u_in_fifo/</td>
+<td>10.757</td>
+<td>10.757(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/</td>
+<td>31.623</td>
+<td>31.623(31.587)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_ddr_phy_data_io/</td>
+<td>20.830</td>
+<td>20.830(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/data_lane_gen[1].u_ddr_phy_data_lane/u_in_fifo/</td>
+<td>10.757</td>
+<td>10.757(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[0].fifo_ctrl/</td>
+<td>0.007</td>
+<td>0.007(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/fifo_ctrl_gen[1].fifo_ctrl/</td>
+<td>0.007</td>
+<td>0.007(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/</td>
+<td>0.028</td>
+<td>0.028(0.017)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_cmd_lane/u_ddr_phy_cmd_io/</td>
+<td>0.017</td>
+<td>0.017(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_ddr_phy_top/u_ddr_phy_wds/u_ddr_phy_reset_gen/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_ddr_phy_top/u_eye_calib/</td>
+<td>0.053</td>
+<td>0.053(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_ddr_phy_top/u_eye_calib_rmove_mod/</td>
+<td>0.022</td>
+<td>0.022(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_ddr_phy_top/u_init_rmove_mod/</td>
+<td>0.093</td>
+<td>0.093(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_gwmc_top/</td>
+<td>21.760</td>
+<td>21.760(21.720)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_gwmc_top/gw_cmd0/</td>
+<td>0.091</td>
+<td>0.091(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_gwmc_top/gw_wr_data0/</td>
+<td>21.564</td>
+<td>21.564(21.528)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_gwmc_top/gw_wr_data0/wr_fifo/</td>
+<td>21.528</td>
+<td>21.528(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_gwmc_top/gwmc_bank_ctrl/</td>
+<td>0.048</td>
+<td>0.048(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_gwmc_top/gwmc_rank_ctrl/</td>
+<td>0.012</td>
+<td>0.012(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_ddr3/gw3_top/u_gwmc_top/gwmc_timing_ctrl/</td>
+<td>0.005</td>
+<td>0.005(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/u_sync_p2p/</td>
+<td>0.001</td>
+<td>0.001(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_internet/</td>
+<td>0.001</td>
+<td>0.001(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_spi_flash/</td>
+<td>0.001</td>
+<td>0.001(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_cmsdk_ahb_gpio_0/</td>
+<td>0.067</td>
+<td>0.067(0.067)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_cmsdk_ahb_gpio_0/u_ahb_to_gpio/</td>
+<td>0.002</td>
+<td>0.002(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_cmsdk_ahb_gpio_0/u_iop_gpio/</td>
+<td>0.065</td>
+<td>0.065(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/</td>
+<td>0.050</td>
+<td>0.050(0.050)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/</td>
+<td>0.050</td>
+<td>0.050(0.050)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uInputStage0/</td>
+<td>0.008</td>
+<td>0.008(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uMatrixDecodeS0/</td>
+<td>0.006</td>
+<td>0.006(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage0/</td>
+<td>0.004</td>
+<td>0.004(0.001)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage0/uOutputArb/</td>
+<td>0.001</td>
+<td>0.001(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage1/</td>
+<td>0.002</td>
+<td>0.002(0.001)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage1/uOutputArb/</td>
+<td>0.001</td>
+<td>0.001(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage10/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage10/uOutputArb/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage11/</td>
+<td>0.005</td>
+<td>0.005(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage11/uOutputArb/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage12/</td>
+<td>0.001</td>
+<td>0.001(0.001)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage12/uOutputArb/</td>
+<td>0.001</td>
+<td>0.001(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage13/</td>
+<td>0.001</td>
+<td>0.001(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage13/uOutputArb/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage14/</td>
+<td>0.001</td>
+<td>0.001(0.001)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage14/uOutputArb/</td>
+<td>0.001</td>
+<td>0.001(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage15/</td>
+<td>0.001</td>
+<td>0.001(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage15/uOutputArb/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage2/</td>
+<td>0.002</td>
+<td>0.002(0.001)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage2/uOutputArb/</td>
+<td>0.001</td>
+<td>0.001(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage3/</td>
+<td>0.001</td>
+<td>0.001(0.001)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage3/uOutputArb/</td>
+<td>0.001</td>
+<td>0.001(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage4/</td>
+<td>0.004</td>
+<td>0.004(0.001)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage4/uOutputArb/</td>
+<td>0.001</td>
+<td>0.001(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage5/</td>
+<td>0.006</td>
+<td>0.006(0.001)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage5/uOutputArb/</td>
+<td>0.001</td>
+<td>0.001(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage6/</td>
+<td>0.003</td>
+<td>0.003(0.003)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage6/uOutputArb/</td>
+<td>0.003</td>
+<td>0.003(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage7/</td>
+<td>0.001</td>
+<td>0.001(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage7/uOutputArb/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage8/</td>
+<td>0.002</td>
+<td>0.002(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage8/uOutputArb/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage9/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gowinahbext/u_bus_matrix/uOutputstage9/uOutputArb/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gw_apb_int_wrapper/</td>
+<td>0.055</td>
+<td>0.055(0.055)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gw_apb_int_wrapper/u_integration_peripherals/</td>
+<td>0.043</td>
+<td>0.043(0.043)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gw_apb_int_wrapper/u_integration_peripherals/u_cmsdk_apb_uart_1/</td>
+<td>0.043</td>
+<td>0.043(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_gw_apb_int_wrapper/u_p_sse050_interconnect_f0_ahb_to_apb/</td>
+<td>0.013</td>
+<td>0.013(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/</td>
+<td>0.019</td>
+<td>0.019(0.000)</td>
+<tr>
+<td>top/Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_apb_slave_mux/</td>
+<td>0.000</td>
+<td>0.000(0.000)</td>
+<tr>
+<td>top/ahb_ram_inst/</td>
+<td>19.830</td>
+<td>19.830(0.000)</td>
+<tr>
+<td>top/apb_memmap_inst/</td>
+<td>0.027</td>
+<td>0.027(0.020)</td>
+<tr>
+<td>top/apb_memmap_inst/gpio_inst/</td>
+<td>0.016</td>
+<td>0.016(0.016)</td>
+<tr>
+<td>top/apb_memmap_inst/gpio_inst/u_regs/</td>
+<td>0.016</td>
+<td>0.016(0.000)</td>
+<tr>
+<td>top/apb_memmap_inst/sysinfo_inst/</td>
+<td>0.004</td>
+<td>0.004(0.004)</td>
+<tr>
+<td>top/apb_memmap_inst/sysinfo_inst/u_regs/</td>
+<td>0.004</td>
+<td>0.004(0.000)</td>
+<tr>
+<td>top/gwct_inst/</td>
+<td>0.083</td>
+<td>0.083(0.083)</td>
+<tr>
+<td>top/gwct_inst/apb_master_inst/</td>
+<td>0.012</td>
+<td>0.012(0.000)</td>
+<tr>
+<td>top/gwct_inst/packet_inst/</td>
+<td>0.046</td>
+<td>0.046(0.000)</td>
+<tr>
+<td>top/gwct_inst/uart_inst/</td>
+<td>0.024</td>
+<td>0.024(0.000)</td>
+<tr>
+<td>top/u_Gowin_PLL/</td>
+<td>9.684</td>
+<td>9.684(9.684)</td>
+<tr>
+<td>top/u_Gowin_PLL/u_pll/</td>
+<td>9.648</td>
+<td>9.648(0.000)</td>
+<tr>
+<td>top/u_Gowin_PLL/u_pll_init/</td>
+<td>0.035</td>
+<td>0.035(0.000)</td>
+</table>
+<h2><a name="By_Clock_Domain">Power By Clock Domain:</a></h2>
+<table class="detail_table">
+<tr>
+<th class="label">Clock Domain</th>
+<th class="label">Clock Frequency(Mhz)</th>
+<th class="label">Total Dynamic Power(mW)</th>
+</tr>
+<tr>
+<td>hclk</td>
+<td>50.000</td>
+<td>194.311</td>
+</tr>
+<tr>
+<td>ddr3_sys_clk</td>
+<td>50.000</td>
+<td>43.787</td>
+</tr>
+<tr>
+<td>swd_clk</td>
+<td>5.000</td>
+<td>0.010</td>
+</tr>
+<tr>
+<td>NO CLOCK DOMAIN</td>
+<td>0.000</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>ddr3_mem_clk</td>
+<td>200.000</td>
+<td>58.223</td>
+</tr>
+</table>
+</div><!-- content -->
+</div><!-- main_wrapper -->
+</body>
+</html>

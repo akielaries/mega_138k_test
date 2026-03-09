@@ -1,0 +1,75 @@
+//Copyright (C)2014-2025 Gowin Semiconductor Corporation.
+//All rights reserved.
+//File Title: Template file for instantiation
+//Tool Version: V1.9.12.01
+//IP Version: 2.1
+//Part Number: GW5AST-LV138FPG676AC2/I1
+//Device: GW5AST-138
+//Device Version: B
+//Created Time: Sun Mar  8 16:15:25 2026
+
+//Change the instance name and port connections to the signal names
+//--------Copy here to design--------
+
+	Gowin_EMPU_M1_Top your_instance_name(
+		.LOCKUP(LOCKUP), //output LOCKUP
+		.HALTED(HALTED), //output HALTED
+		.GPIO(GPIO), //inout [15:0] GPIO
+		.JTAG_7(JTAG_7), //inout JTAG_7
+		.JTAG_9(JTAG_9), //inout JTAG_9
+		.UART1RXD(UART1RXD), //input UART1RXD
+		.UART1TXD(UART1TXD), //output UART1TXD
+		.APB1PADDR(APB1PADDR), //output [31:0] APB1PADDR
+		.APB1PENABLE(APB1PENABLE), //output APB1PENABLE
+		.APB1PWRITE(APB1PWRITE), //output APB1PWRITE
+		.APB1PSTRB(APB1PSTRB), //output [3:0] APB1PSTRB
+		.APB1PPROT(APB1PPROT), //output [2:0] APB1PPROT
+		.APB1PWDATA(APB1PWDATA), //output [31:0] APB1PWDATA
+		.APB1PSEL(APB1PSEL), //output APB1PSEL
+		.APB1PRDATA(APB1PRDATA), //input [31:0] APB1PRDATA
+		.APB1PREADY(APB1PREADY), //input APB1PREADY
+		.APB1PSLVERR(APB1PSLVERR), //input APB1PSLVERR
+		.APB1PCLK(APB1PCLK), //output APB1PCLK
+		.APB1PRESET(APB1PRESET), //output APB1PRESET
+		.AHB1HRDATA(AHB1HRDATA), //input [31:0] AHB1HRDATA
+		.AHB1HREADYOUT(AHB1HREADYOUT), //input AHB1HREADYOUT
+		.AHB1HRESP(AHB1HRESP), //input [1:0] AHB1HRESP
+		.AHB1HTRANS(AHB1HTRANS), //output [1:0] AHB1HTRANS
+		.AHB1HBURST(AHB1HBURST), //output [2:0] AHB1HBURST
+		.AHB1HPROT(AHB1HPROT), //output [3:0] AHB1HPROT
+		.AHB1HSIZE(AHB1HSIZE), //output [2:0] AHB1HSIZE
+		.AHB1HWRITE(AHB1HWRITE), //output AHB1HWRITE
+		.AHB1HREADYMUX(AHB1HREADYMUX), //output AHB1HREADYMUX
+		.AHB1HMASTER(AHB1HMASTER), //output [3:0] AHB1HMASTER
+		.AHB1HMASTLOCK(AHB1HMASTLOCK), //output AHB1HMASTLOCK
+		.AHB1HADDR(AHB1HADDR), //output [31:0] AHB1HADDR
+		.AHB1HWDATA(AHB1HWDATA), //output [31:0] AHB1HWDATA
+		.AHB1HSEL(AHB1HSEL), //output AHB1HSEL
+		.AHB1HCLK(AHB1HCLK), //output AHB1HCLK
+		.AHB1HRESET(AHB1HRESET), //output AHB1HRESET
+		.DDR_CLK_I(DDR_CLK_I), //input DDR_CLK_I
+		.DDR_STOP_O(DDR_STOP_O), //output DDR_STOP_O
+		.DDR_MEM_CLK_I(DDR_MEM_CLK_I), //input DDR_MEM_CLK_I
+		.DDR_LOCK_I(DDR_LOCK_I), //input DDR_LOCK_I
+		.DDR_RSTN_I(DDR_RSTN_I), //input DDR_RSTN_I
+		.DDR_INIT_COMPLETE_O(DDR_INIT_COMPLETE_O), //output DDR_INIT_COMPLETE_O
+		.DDR_ADDR_O(DDR_ADDR_O), //output [13:0] DDR_ADDR_O
+		.DDR_BA_O(DDR_BA_O), //output [2:0] DDR_BA_O
+		.DDR_CS_N_O(DDR_CS_N_O), //output DDR_CS_N_O
+		.DDR_RAS_N_O(DDR_RAS_N_O), //output DDR_RAS_N_O
+		.DDR_CAS_N_O(DDR_CAS_N_O), //output DDR_CAS_N_O
+		.DDR_WE_N_O(DDR_WE_N_O), //output DDR_WE_N_O
+		.DDR_CLK_O(DDR_CLK_O), //output DDR_CLK_O
+		.DDR_CLK_N_O(DDR_CLK_N_O), //output DDR_CLK_N_O
+		.DDR_CKE_O(DDR_CKE_O), //output DDR_CKE_O
+		.DDR_ODT_O(DDR_ODT_O), //output DDR_ODT_O
+		.DDR_RESET_N_O(DDR_RESET_N_O), //output DDR_RESET_N_O
+		.DDR_DQM_O(DDR_DQM_O), //output [1:0] DDR_DQM_O
+		.DDR_DQ_IO(DDR_DQ_IO), //inout [15:0] DDR_DQ_IO
+		.DDR_DQS_IO(DDR_DQS_IO), //inout [1:0] DDR_DQS_IO
+		.DDR_DQS_N_IO(DDR_DQS_N_IO), //inout [1:0] DDR_DQS_N_IO
+		.HCLK(HCLK), //input HCLK
+		.hwRstn(hwRstn) //input hwRstn
+	);
+
+//--------Copy end-------------------

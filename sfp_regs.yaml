@@ -1,0 +1,128 @@
+memory-map:
+  bus: apb-32
+  name: sfp_regs
+  description: SFP SerDes Register Block
+  children:
+    - reg:
+        name: stat
+        description: Per-lane SerDes status (read-only)
+        width: 32
+        access: ro
+        children:
+          - field:
+              name: ln0_signal_detect
+              description: Lane 0 signal detect
+              range: 0
+          - field:
+              name: ln0_rx_cdr_lock
+              description: Lane 0 RX CDR lock
+              range: 1
+          - field:
+              name: ln0_k_lock
+              description: Lane 0 K28.5 word alignment lock
+              range: 2
+          - field:
+              name: ln0_word_align_link
+              description: Lane 0 word align link up
+              range: 3
+          - field:
+              name: ln0_pll_lock
+              description: Lane 0 PLL lock
+              range: 4
+          - field:
+              name: ln0_ready
+              description: Lane 0 SerDes ready
+              range: 5
+          - field:
+              name: ln0_prbs_lock
+              description: Lane 0 PRBS7 lock
+              range: 6
+          - field:
+              name: ln0_rx_valid
+              description: Lane 0 RX data valid
+              range: 7
+          - field:
+              name: ln0_rx_fifo_empty
+              description: Lane 0 RX FIFO empty
+              range: 8
+          - field:
+              name: ln0_tx_fifo_afull
+              description: Lane 0 TX FIFO almost full
+              range: 9
+          - field:
+              name: ln0_tx_fifo_full
+              description: Lane 0 TX FIFO full
+              range: 10
+          - field:
+              name: ln1_signal_detect
+              description: Lane 1 signal detect
+              range: 16
+          - field:
+              name: ln1_rx_cdr_lock
+              description: Lane 1 RX CDR lock
+              range: 17
+          - field:
+              name: ln1_k_lock
+              description: Lane 1 K28.5 word alignment lock
+              range: 18
+          - field:
+              name: ln1_word_align_link
+              description: Lane 1 word align link up
+              range: 19
+          - field:
+              name: ln1_pll_lock
+              description: Lane 1 PLL lock
+              range: 20
+          - field:
+              name: ln1_ready
+              description: Lane 1 SerDes ready
+              range: 21
+          - field:
+              name: ln1_prbs_lock
+              description: Lane 1 PRBS7 lock
+              range: 22
+          - field:
+              name: ln1_rx_valid
+              description: Lane 1 RX data valid
+              range: 23
+          - field:
+              name: ln1_rx_fifo_empty
+              description: Lane 1 RX FIFO empty
+              range: 24
+          - field:
+              name: ln1_tx_fifo_afull
+              description: Lane 1 TX FIFO almost full
+              range: 25
+          - field:
+              name: ln1_tx_fifo_full
+              description: Lane 1 TX FIFO full
+              range: 26
+
+    - reg:
+        name: ln0_rx_snap
+        description: Lane 0 RX data snapshot
+        width: 32
+        access: ro
+
+    - reg:
+        name: ln1_rx_snap
+        description: Lane 1 RX data snapshot
+        width: 32
+        access: ro
+
+    - reg:
+        name: ctrl
+        description: SerDes control register
+        width: 32
+        access: rw
+        children:
+          - field:
+              name: tx_mode
+              description: TX mode select (0=PRBS7, 1=user pattern)
+              range: 0
+
+    - reg:
+        name: tx_pattern
+        description: User TX data pattern (active when ctrl.tx_mode=1)
+        width: 32
+        access: rw

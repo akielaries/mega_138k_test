@@ -1,0 +1,40 @@
+<?xml version="1" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW5AST-138B" pn="GW5AST-LV138FPG676AC2/I1">gw5ast138b-006</Device>
+    <FileList>
+        <File path="src/ahb1_sram.v" type="file.verilog" enable="1"/>
+        <File path="src/ahb_to_apb_32_bridge/ahb_to_apb_32_bridge.v" type="file.verilog" enable="0"/>
+        <File path="src/apb_ahb_bridge.v" type="file.verilog" enable="1"/>
+        <File path="src/apb_memmap.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_empu_m1/gowin_empu_m1.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_pll/gowin_pll.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin_pll/gowin_pll_mod.v" type="file.verilog" enable="1"/>
+        <File path="src/gpio.v" type="file.verilog" enable="1"/>
+        <File path="src/gpio_regs.v" type="file.verilog" enable="1"/>
+        <File path="src/gwct_apb_master.v" type="file.verilog" enable="1"/>
+        <File path="src/gwct_bridge.v" type="file.verilog" enable="1"/>
+        <File path="src/gwct_packet.v" type="file.verilog" enable="1"/>
+        <File path="src/gwct_uart.v" type="file.verilog" enable="1"/>
+        <File path="src/pll_init.v" type="file.verilog" enable="1"/>
+        <File path="src/prbs7_chk.v" type="file.verilog" enable="1"/>
+        <File path="src/prbs7_gen.v" type="file.verilog" enable="1"/>
+        <File path="src/prbs7_single_channel.v" type="file.verilog" enable="1"/>
+        <File path="src/serdes/customized_phy/customized_phy.v" type="file.verilog" enable="1"/>
+        <File path="src/serdes/serdes.v" type="file.verilog" enable="1"/>
+        <File path="src/sfp_loopback.v" type="file.verilog" enable="1"/>
+        <File path="src/sfp_regs.v" type="file.verilog" enable="1"/>
+        <File path="src/sysinfo.v" type="file.verilog" enable="1"/>
+        <File path="src/sysinfo_regs.v" type="file.verilog" enable="1"/>
+        <File path="src/top.v" type="file.verilog" enable="1"/>
+        <File path="src/uart_hello.v" type="file.verilog" enable="0"/>
+        <File path="src/uart_tx.v" type="file.verilog" enable="0"/>
+        <File path="src/ws2812_driver.v" type="file.verilog" enable="0"/>
+        <File path="src/pins.cst" type="file.cst" enable="1"/>
+        <File path="src/mega_60k_test.sdc" type="file.sdc" enable="1"/>
+        <File path="src/serdes/serdes.csr" type="file.other" enable="0"/>
+        <File path="src/serdes/serdes.ipc" type="file.other" enable="0"/>
+    </FileList>
+</Project>

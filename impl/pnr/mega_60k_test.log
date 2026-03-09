@@ -1,0 +1,4 @@
+Reading netlist file: "/home/akiel/trunk/pub/mega_138k_test/impl/gwsynthesis/mega_60k_test.vg"
+Parsing netlist file "/home/akiel/trunk/pub/mega_138k_test/impl/gwsynthesis/mega_60k_test.vg" completed
+ERROR  (CM2031) : csr file should be specified.
+NOTE  (PA0005) : Processing netlist completed with errors
