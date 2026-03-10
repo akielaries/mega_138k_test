@@ -152,15 +152,19 @@ module sfp_loopback (
 
     // TX: K28.5 comma + 7 data words.
     // tx_mode=0 (default): PRBS7 pattern — locks PRBS checker for link verification.
-    // tx_mode=1 (user):    4 bytes of tx_pattern followed by 3 idle words — lets
-    //                      firmware write a known value (e.g. 0xDEADBEEF) and read
-    //                      it back via ln1_rx_snap.
-    wire [9:0] upat_b0    = {1'b0, tx_pattern[7:0]};
-    wire [9:0] upat_b1    = {1'b0, tx_pattern[15:8]};
-    wire [9:0] upat_b2    = {1'b0, tx_pattern[23:16]};
-    wire [9:0] upat_b3    = {1'b0, tx_pattern[31:24]};
+    // tx_mode=1 (user):    tx_pattern bytes placed immediately after COMMA so they
+    //                      land in sym1-4 of the aligned RX word and are captured
+    //                      cleanly by the snap registers.
+    wire [9:0] upat_b0    = {2'b0, tx_pattern[7:0]};
+    wire [9:0] upat_b1    = {2'b0, tx_pattern[15:8]};
+    wire [9:0] upat_b2    = {2'b0, tx_pattern[23:16]};
+    wire [9:0] upat_b3    = {2'b0, tx_pattern[31:24]};
     wire [9:0] upat_idle  = 10'h000;
 
+    // tx_mode=1: Gowin SerDes serializes LSB-first (tx[9:0] hits the wire first).
+    // COMMA stays at [79:70] (last transmitted → word aligner makes it sym0).
+    // b0..b3 at [9:0]..[39:30] → transmitted right after COMMA → land at sym1–4.
+    // Snap captures D-bytes from sym1–4 → {b3,b2,b1,b0} == tx_pattern.
     assign ln1_tx_data = tx_mode ?
         {COMMA, upat_idle, upat_idle, upat_idle, upat_b3, upat_b2, upat_b1, upat_b0} :
         {COMMA, {7{ln1_prbs7_10b}}};
@@ -243,14 +247,22 @@ module sfp_loopback (
     // Readable via APB at 0x6000_0030 (ln0) and 0x6000_0034 (ln1).
     // Holds last captured value; useful for confirming comma + data arrival.
     // =========================================================================
+    // Snap captures D-bytes of sym1–4 (immediately after the word-aligned COMMA).
+    // sym N occupies rx_data[10N+9 : 10N]; its D-byte is at [10N+7 : 10N].
+    // sym1→[17:10], sym2→[27:20], sym3→[37:30], sym4→[47:40]
+    // Result: snap[31:24]=b3, [23:16]=b2, [15:8]=b1, [7:0]=b0 → equals tx_pattern.
     always @(posedge ln0_rx_pcs_clk or negedge rstn) begin
         if (!rstn) ln0_rx_snap <= 32'h0;
-        else if (ln0_rx_valid) ln0_rx_snap <= ln0_rx_data[31:0];
+        else if (ln0_rx_valid)
+            ln0_rx_snap <= {ln0_rx_data[47:40], ln0_rx_data[37:30],
+                            ln0_rx_data[27:20], ln0_rx_data[17:10]};
     end
 
     always @(posedge ln1_rx_pcs_clk or negedge rstn) begin
         if (!rstn) ln1_rx_snap <= 32'h0;
-        else if (ln1_rx_valid) ln1_rx_snap <= ln1_rx_data[31:0];
+        else if (ln1_rx_valid)
+            ln1_rx_snap <= {ln1_rx_data[47:40], ln1_rx_data[37:30],
+                            ln1_rx_data[27:20], ln1_rx_data[17:10]};
     end
 
     // =========================================================================

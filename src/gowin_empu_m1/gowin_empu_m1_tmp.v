@@ -6,7 +6,7 @@
 //Part Number: GW5AST-LV138FPG676AC2/I1
 //Device: GW5AST-138
 //Device Version: B
-//Created Time: Sun Mar  8 16:15:25 2026
+//Created Time: Mon Mar  9 20:05:03 2026
 
 //Change the instance name and port connections to the signal names
 //--------Copy here to design--------
@@ -47,6 +47,15 @@
 		.AHB1HSEL(AHB1HSEL), //output AHB1HSEL
 		.AHB1HCLK(AHB1HCLK), //output AHB1HCLK
 		.AHB1HRESET(AHB1HRESET), //output AHB1HRESET
+		.RGMII_TXC(RGMII_TXC), //output RGMII_TXC
+		.RGMII_TX_CTL(RGMII_TX_CTL), //output RGMII_TX_CTL
+		.RGMII_TXD(RGMII_TXD), //output [3:0] RGMII_TXD
+		.RGMII_RXC(RGMII_RXC), //input RGMII_RXC
+		.RGMII_RX_CTL(RGMII_RX_CTL), //input RGMII_RX_CTL
+		.RGMII_RXD(RGMII_RXD), //input [3:0] RGMII_RXD
+		.GTX_CLK(GTX_CLK), //input GTX_CLK
+		.MDC(MDC), //output MDC
+		.MDIO(MDIO), //inout MDIO
 		.DDR_CLK_I(DDR_CLK_I), //input DDR_CLK_I
 		.DDR_STOP_O(DDR_STOP_O), //output DDR_STOP_O
 		.DDR_MEM_CLK_I(DDR_MEM_CLK_I), //input DDR_MEM_CLK_I

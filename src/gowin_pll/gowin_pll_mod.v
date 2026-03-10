@@ -6,7 +6,7 @@
 //Part Number: GW5AST-LV138FPG676AC2/I1
 //Device: GW5AST-138
 //Device Version: B
-//Created Time: Sun Mar  8 14:23:59 2026
+//Created Time: Mon Mar  9 20:15:41 2026
 
 module Gowin_PLL_MOD (lock, clkout0, clkout2, clkin, reset, icpsel, lpfres, lpfcap, enclk0, enclk2);
 
@@ -87,14 +87,14 @@ PLL PLL_inst (
 defparam PLL_inst.FCLKIN = "50";
 defparam PLL_inst.IDIV_SEL = 1;
 defparam PLL_inst.FBDIV_SEL = 1;
-defparam PLL_inst.ODIV0_SEL = 4;
+defparam PLL_inst.ODIV0_SEL = 8;
 defparam PLL_inst.ODIV1_SEL = 8;
-defparam PLL_inst.ODIV2_SEL = 4;
+defparam PLL_inst.ODIV2_SEL = 5;
 defparam PLL_inst.ODIV3_SEL = 8;
 defparam PLL_inst.ODIV4_SEL = 8;
 defparam PLL_inst.ODIV5_SEL = 8;
 defparam PLL_inst.ODIV6_SEL = 8;
-defparam PLL_inst.MDIV_SEL = 16;
+defparam PLL_inst.MDIV_SEL = 20;
 defparam PLL_inst.MDIV_FRAC_SEL = 0;
 defparam PLL_inst.ODIV0_FRAC_SEL = 0;
 defparam PLL_inst.CLKOUT0_EN = "TRUE";

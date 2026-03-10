@@ -17,7 +17,7 @@
   "SubInsts" : [
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/top.v",
-    "InstLine" : 142,
+    "InstLine" : 154,
     "InstName" : "u_Gowin_PLL",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll/gowin_pll.v",
     "ModuleLine" : 1,
@@ -43,15 +43,15 @@
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/top.v",
-    "InstLine" : 160,
+    "InstLine" : 193,
     "InstName" : "Cortex_M1_instance",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/gowin_empu_m1.v",
-    "ModuleLine" : 66261,
+    "ModuleLine" : 75664,
     "ModuleName" : "Gowin_EMPU_M1_Top",
     "SubInsts" : [
      {
       "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/gowin_empu_m1.v",
-      "InstLine" : 67532,
+      "InstLine" : 77042,
       "InstName" : "M1_inst",
       "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/gowin_empu_m1.v",
       "ModuleLine" : 199,
@@ -59,17 +59,17 @@
      },
      {
       "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/gowin_empu_m1.v",
-      "InstLine" : 67655,
+      "InstLine" : 77167,
       "InstName" : "u_GowinCM1AhbExtWrapper",
       "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/gowin_empu_m1.v",
-      "ModuleLine" : 40732,
+      "ModuleLine" : 40794,
       "ModuleName" : "GowinCM1AhbExtWrapper"
      }
     ]
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/top.v",
-    "InstLine" : 239,
+    "InstLine" : 283,
     "InstName" : "ahb_ram_inst",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/ahb1_sram.v",
     "ModuleLine" : 2,
@@ -77,7 +77,7 @@
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/top.v",
-    "InstLine" : 282,
+    "InstLine" : 326,
     "InstName" : "gwct_inst",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/gwct_bridge.v",
     "ModuleLine" : 57,
@@ -111,7 +111,7 @@
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/top.v",
-    "InstLine" : 330,
+    "InstLine" : 374,
     "InstName" : "apb_memmap_inst",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/apb_memmap.v",
     "ModuleLine" : 1,
@@ -165,7 +165,7 @@
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/top.v",
-    "InstLine" : 357,
+    "InstLine" : 401,
     "InstName" : "sfp_inst",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/sfp_loopback.v",
     "ModuleLine" : 14,
@@ -191,7 +191,7 @@
      },
      {
       "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/sfp_loopback.v",
-      "InstLine" : 178,
+      "InstLine" : 182,
       "InstName" : "ln1_prbs7",
       "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/prbs7_single_channel.v",
       "ModuleLine" : 1,
@@ -217,7 +217,7 @@
      },
      {
       "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/sfp_loopback.v",
-      "InstLine" : 210,
+      "InstLine" : 214,
       "InstName" : "ln0_prbs7",
       "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/prbs7_single_channel.v",
       "ModuleLine" : 1,

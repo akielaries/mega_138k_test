@@ -30,9 +30,20 @@ module top (
     // SFP+ loopback test
     output SFP_TX_DIS_LN0,
     output SFP_TX_DIS_LN1,
-    output SFP_LCK0,            // GPIO[4] — lane 0 PRBS lock
-    output SFP_LCK1,            // GPIO[5] — lane 1 PRBS lock
-    output SFP_ACT,             // GPIO[3] — TX activity blink
+    output SFP_LCK0,            // GPIO[4] lane 0 PRBS lock
+    output SFP_LCK1,            // GPIO[5] lane 1 PRBS lock
+    output SFP_ACT,             // GPIO[3] TX activity blink
+    // RGMII Ethernet (RTL8211FI-CG)
+    output        RGMII_TXC,
+    output        RGMII_TX_CTL,
+    output [3:0]  RGMII_TXD,
+    input         RGMII_RXC,
+    input         RGMII_RX_CTL,
+    input  [3:0]  RGMII_RXD,
+    output        MDC,
+    inout         MDIO,
+    output        EPHY_RST_N,
+    output        EPHY_CLK,
     // DDR3
     output DDR_INIT_COMPLETE_O,
     output [13:0] DDR_ADDR_O,
@@ -116,6 +127,7 @@ module top (
     wire MCU_CLK;           //MCU input clock   50MHz
     wire DDR_CLK;           //DDR3 input clock  50MHz
     wire DDR_MEM_CLK;       //DDR3 memory clock 200MHz
+    wire gtx_clk_125;       //RGMII TX clock    125MHz
     wire DDR_LOCK;
     wire DDR_STOP;
 
@@ -142,17 +154,38 @@ module top (
     Gowin_PLL u_Gowin_PLL
     (
         .lock(pll_lock),
-        .clkout0(),
-        .clkout2(DDR_MEM_CLK),
+        .clkout0(gtx_clk_125),  // 125 MHz — RGMII GTX_CLK
+        .clkout2(DDR_MEM_CLK),  // 200 MHz — DDR3
         .clkin(HCLK),
         .init_clk(HCLK),
         .reset(1'b0),
-        .enclk0(1'b0),
+        .enclk0(1'b1),
         .enclk2(DDR_STOP)
     );
 
     assign MCU_CLK = HCLK;
     assign DDR_CLK = HCLK;
+
+    // =========================================================================
+    // PHY reset — RTL8211 requires RST_N low for >=10ms before release.
+    // 20-bit counter at 50 MHz rolls over at ~20.97ms, more than enough.
+    // =========================================================================
+    reg [19:0] phy_rst_cnt;
+    reg        phy_rst_n;
+
+    always @(posedge HCLK or negedge hwRstn) begin
+        if (!hwRstn) begin
+            phy_rst_cnt <= 20'd0;
+            phy_rst_n   <= 1'b0;
+        end else if (!phy_rst_n) begin
+            if (&phy_rst_cnt)
+                phy_rst_n <= 1'b1;
+            else
+                phy_rst_cnt <= phy_rst_cnt + 1'b1;
+        end
+    end
+
+    assign EPHY_RST_N = phy_rst_n;
 
     // ------------------------------------------------------------
     // Cortex-M1 instantiation
@@ -222,6 +255,17 @@ module top (
         .DDR_LOCK_I(pll_lock),
         .DDR_STOP_O(DDR_STOP),
         .DDR_RSTN_I(hwRstn),
+
+        // RGMII Ethernet
+        .RGMII_TXC(RGMII_TXC),
+        .RGMII_TX_CTL(RGMII_TX_CTL),
+        .RGMII_TXD(RGMII_TXD),
+        .RGMII_RXC(RGMII_RXC),
+        .RGMII_RX_CTL(RGMII_RX_CTL),
+        .RGMII_RXD(RGMII_RXD),
+        .GTX_CLK(gtx_clk_125),
+        .MDC(MDC),
+        .MDIO(MDIO),
 
         .HCLK(HCLK),
         .hwRstn(hwRstn)

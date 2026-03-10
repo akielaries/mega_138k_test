@@ -20,13 +20,13 @@
         <File path="/home/akiel/trunk/pub/mega_138k_test/src/prbs7_chk.v" type="verilog"/>
         <File path="/home/akiel/trunk/pub/mega_138k_test/src/prbs7_gen.v" type="verilog"/>
         <File path="/home/akiel/trunk/pub/mega_138k_test/src/prbs7_single_channel.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/serdes/customized_phy/customized_phy.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/serdes/serdes.v" type="verilog"/>
         <File path="/home/akiel/trunk/pub/mega_138k_test/src/sfp_loopback.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/sfp_regs.v" type="verilog"/>
         <File path="/home/akiel/trunk/pub/mega_138k_test/src/sysinfo.v" type="verilog"/>
         <File path="/home/akiel/trunk/pub/mega_138k_test/src/sysinfo_regs.v" type="verilog"/>
         <File path="/home/akiel/trunk/pub/mega_138k_test/src/top.v" type="verilog"/>
-        <File path="/home/akiel/trunk/pub/mega_138k_test/src/serdes/customized_phy/customized_phy.v" type="verilog"/>
-        <File path="/home/akiel/trunk/pub/mega_138k_test/src/serdes/serdes.v" type="verilog"/>
-        <File path="/home/akiel/trunk/pub/mega_138k_test/src/sfp_regs.v" type="verilog"/>
     </FileList>
     <OptionList>
         <Option type="disable_insert_pad" value="0"/>

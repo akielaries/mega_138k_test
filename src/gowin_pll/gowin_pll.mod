@@ -29,7 +29,7 @@
 -dyn_dpa_en false
 -clkout0_bypass false
 -dyn_odiv0_sel false
--odiv0_sel 4
+-odiv0_sel 8
 -odiv0_frac_sel 0
 -dyn_dt0_sel false
 -clkout0_dt_dir 1
@@ -45,7 +45,7 @@
 -en_clkout2 true
 -clkout2_bypass false
 -dyn_odiv2_sel false
--odiv2_sel 4
+-odiv2_sel 5
 -dyn_dt2_sel false
 -clkout2_dt_dir 1
 -clkout2_dt_step 0
@@ -59,5 +59,5 @@
 -en_clkout6 false
 -en_clkfbout false
 -dyn_mdiv_sel false
--mdiv_sel 16
+-mdiv_sel 20
 -mdiv_frac_sel 0

@@ -14,6 +14,7 @@ Running routing......
 [80%] Routing Phase 2 completed
 WARN  (PR1014) : Generic routing resource will be used to clock signal 'gowin_add_ibuf_net_HCLK' by the specified constraint. And then it may lead to the excessive delay or skew
 WARN  (PR1014) : Generic routing resource will be used to clock signal '\Cortex_M1_instance/JTAG_9_1 ' by the specified constraint. And then it may lead to the excessive delay or skew
+WARN  (PR1014) : Generic routing resource will be used to clock signal '\Cortex_M1_instance/RGMII_RXC_d ' by the specified constraint. And then it may lead to the excessive delay or skew
 [90%] Routing Phase 3 completed
 Running timing analysis......
 [95%] Timing analysis completed
@@ -28,5 +29,5 @@ Generate file "/home/akiel/trunk/pub/mega_138k_test/impl/pnr/mega_138k_test.rpt.
 Generate file "/home/akiel/trunk/pub/mega_138k_test/impl/pnr/mega_138k_test.rpt.txt" completed
 Generate file "/home/akiel/trunk/pub/mega_138k_test/impl/pnr/mega_138k_test.vo" completed
 Generate file "/home/akiel/trunk/pub/mega_138k_test/impl/pnr/mega_138k_test.tr.html" completed
-Mon Mar  9 14:40:25 2026
+Mon Mar  9 21:37:29 2026
 

@@ -66,7 +66,19 @@
    "Type" : "verilog"
   },
   {
+   "Path" : "/home/akiel/trunk/pub/mega_138k_test/src/serdes/customized_phy/customized_phy.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_138k_test/src/serdes/serdes.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "/home/akiel/trunk/pub/mega_138k_test/src/sfp_loopback.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_138k_test/src/sfp_regs.v",
    "Type" : "verilog"
   },
   {
@@ -79,18 +91,6 @@
   },
   {
    "Path" : "/home/akiel/trunk/pub/mega_138k_test/src/top.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "/home/akiel/trunk/pub/mega_138k_test/src/serdes/customized_phy/customized_phy.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "/home/akiel/trunk/pub/mega_138k_test/src/serdes/serdes.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "/home/akiel/trunk/pub/mega_138k_test/src/sfp_regs.v",
    "Type" : "verilog"
   }
  ],
