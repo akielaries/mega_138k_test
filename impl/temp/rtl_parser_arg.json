@@ -18,6 +18,10 @@
    "Type" : "verilog"
   },
   {
+   "Path" : "/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/temp/gw_empu_m1/triple_speed_mac_param.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll/gowin_pll.v",
    "Type" : "verilog"
   },

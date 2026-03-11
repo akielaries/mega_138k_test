@@ -8,6 +8,7 @@
         <File path="/home/akiel/trunk/pub/mega_138k_test/src/apb_ahb_bridge.v" type="verilog"/>
         <File path="/home/akiel/trunk/pub/mega_138k_test/src/apb_memmap.v" type="verilog"/>
         <File path="/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/gowin_empu_m1.v" type="verilog"/>
+        <File path="/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/temp/gw_empu_m1/triple_speed_mac_param.v" type="verilog"/>
         <File path="/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll/gowin_pll.v" type="verilog"/>
         <File path="/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll/gowin_pll_mod.v" type="verilog"/>
         <File path="/home/akiel/trunk/pub/mega_138k_test/src/gpio.v" type="verilog"/>

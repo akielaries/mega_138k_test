@@ -2,9 +2,13 @@ module Gowin_PLL(
     clkin,
     init_clk,
     enclk0,
+    enclk1,
     enclk2,
+    enclk3,
     clkout0,
+    clkout1,
     clkout2,
+    clkout3,
     lock,
     reset
 );
@@ -13,9 +17,13 @@ module Gowin_PLL(
 input clkin;
 input init_clk;
 input enclk0;
+input enclk1;
 input enclk2;
+input enclk3;
 output clkout0;
+output clkout1;
 output clkout2;
+output clkout3;
 output lock;
 input reset;
 wire [5:0] icpsel;
@@ -26,8 +34,12 @@ wire pll_rst;
 
     Gowin_PLL_MOD u_pll(
         .enclk0(enclk0),
+        .enclk1(enclk1),
         .enclk2(enclk2),
+        .enclk3(enclk3),
+        .clkout1(clkout1),
         .clkout2(clkout2),
+        .clkout3(clkout3),
         .clkout0(clkout0),
         .lock(pll_lock),
         .clkin(clkin),

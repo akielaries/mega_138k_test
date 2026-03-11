@@ -12,27 +12,27 @@
   <Part Number>: GW5AST-LV138FPG676AC2/I1
   <Device>: GW5AST-138
   <Device Version>: B
-  <Created Time>:Mon Mar  9 21:37:28 2026
+  <Created Time>:Tue Mar 10 22:58:15 2026
 
 
 2. PnR Details
 
   Running placement:
-    Placement Phase 0: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
-    Placement Phase 1: CPU time = 0h 0m 0.495s, Elapsed time = 0h 0m 0.491s
-    Placement Phase 2: CPU time = 0h 0m 11s, Elapsed time = 0h 0m 11s
-    Placement Phase 3: CPU time = 0h 0m 40s, Elapsed time = 0h 0m 40s
-    Total Placement: CPU time = 0h 0m 54s, Elapsed time = 0h 0m 54s
+    Placement Phase 0: CPU time = 0h 0m 4s, Elapsed time = 0h 0m 4s
+    Placement Phase 1: CPU time = 0h 0m 0.673s, Elapsed time = 0h 0m 0.67s
+    Placement Phase 2: CPU time = 0h 0m 15s, Elapsed time = 0h 0m 15s
+    Placement Phase 3: CPU time = 0h 0m 47s, Elapsed time = 0h 0m 47s
+    Total Placement: CPU time = 0h 1m 7s, Elapsed time = 0h 1m 6s
  Running routing:
-    Routing Phase 0: CPU time = 0h 0m 0.658s, Elapsed time = 0h 0m 0.656s
-    Routing Phase 1: CPU time = 0h 0m 48s, Elapsed time = 0h 0m 47s
-    Routing Phase 2: CPU time = 0h 0m 0.28s, Elapsed time = 0h 0m 0.273s
+    Routing Phase 0: CPU time = 0h 0m 0.665s, Elapsed time = 0h 0m 0.654s
+    Routing Phase 1: CPU time = 0h 0m 52s, Elapsed time = 0h 0m 52s
+    Routing Phase 2: CPU time = 0h 0m 0.32s, Elapsed time = 0h 0m 0.307s
     Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-    Total Routing: CPU time = 0h 0m 48s, Elapsed time = 0h 0m 48s
+    Total Routing: CPU time = 0h 0m 53s, Elapsed time = 0h 0m 52s
  Generate output files:
-    CPU time = 0h 0m 5s, Elapsed time = 0h 0m 5s
+    CPU time = 0h 0m 6s, Elapsed time = 0h 0m 6s
 
- Total Time and Memory Usage: CPU time = 0h 1m 47s, Elapsed time = 0h 1m 47s, Peak memory usage = 2824MB
+ Total Time and Memory Usage: CPU time = 0h 2m 6s, Elapsed time = 0h 2m 5s, Peak memory usage = 4176MB
 
 
 3. Resource Usage Summary
@@ -48,10 +48,10 @@
     --Logic Register as FF    | 9357/138240                         |  7%
     --I/O Register as Latch   | 0/900                               |  0%
     --I/O Register as FF      | 0/900                               |  0%
-  CLS                         | 10095/69120                         |  15%
+  CLS                         | 10140/69120                         |  15%
   I/O Port                    | 97/312                              |  32%
-  I/O Buf                     | 94                                  | -
-    --Input Buf               | 11                                  | -
+  I/O Buf                     | 93                                  | -
+    --Input Buf               | 10                                  | -
     --Output Buf              | 47                                  | -
     --Inout Buf               | 36                                  | -
   IOLOGIC                     | 71/300                              | 24%
@@ -92,7 +92,7 @@
   Clock Resource| Usage         | Utilization 
   ------------------------------------------
   PRIMARY       | 8/8           | 100%
-  LW            | 5/8           | 63%
+  LW            | 6/8           | 75%
   GCLK_PIN      | 10/24         | 42%
   CLKDIV        | 1/24          | 5%
   DDRDLL        | 1/4           | 25%
@@ -106,15 +106,16 @@
   -------------------------------------------
   Signal         | Global Clock   | Location
   -------------------------------------------
-  gtx_clk_125    | PRIMARY        |  PTR0 PTR1 PBR2 PBR3
+  GTX_CLK        | PRIMARY        |  PTR0 PTR1 PBR2 PBR3
+  EPHY_CLK_d     | PRIMARY        |  PBR1
   DDR_MEM_CLK    | PRIMARY        |  PTR0 PBR0
+  RXC_PLL        | PRIMARY        |  PTR0 PTR1 PBR1 PBR2
   gowin_add_ibuf_net_HCLK| PRIMARY        |  PTR0 PTR1 PTR2 PTR3 PBR0 PBR1 PBR2 PBR3
-  Cortex_M1_instance/RGMII_RXC_d| PRIMARY        |  PTR0 PTR1 PBR1 PBR2
-  Cortex_M1_instance/JTAG_9_1| PRIMARY        |  PTR1
   Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/clk_out| PRIMARY        |  PTR0 PTR1 PBR0 PBR1 PBR2
   sfp_inst/ln0_rx_pcs_clk| PRIMARY        |  PTR0 PTR1 PTR2
   sfp_inst/ln1_rx_pcs_clk| PRIMARY        |  PTR1 PTR2
   gowin_add_ibuf_net_hwRstn| LW             |  -
+  Cortex_M1_instance/JTAG_9_1| LW             |  -
   Cortex_M1_instance/AHB1HRESET_d| LW             |  -
   Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_ahb_ddr3/ddr_rst| LW             |  -
   sfp_inst/ln0_tx_pcs_clk| LW             |  -

@@ -1,0 +1,15 @@
+[General]
+file=gowin_dlldly
+ipc_version=4
+module=Gowin_DLLDLY
+target_device=gw5ast138b-006
+type=clock_dlldly
+version=1.1
+
+[Config]
+Adjust_Scale=0
+Delay_Mode=Static
+Delay_Sign=Positive
+Delay_Source=CSTEP
+Delay_Step=15
+Language=0

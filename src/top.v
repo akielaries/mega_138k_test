@@ -43,7 +43,7 @@ module top (
     output        MDC,
     inout         MDIO,
     output        EPHY_RST_N,
-    output        EPHY_CLK,
+    output        EPHY_CLK,     // ethernet PHY clock
     // DDR3
     output DDR_INIT_COMPLETE_O,
     output [13:0] DDR_ADDR_O,
@@ -127,7 +127,11 @@ module top (
     wire MCU_CLK;           //MCU input clock   50MHz
     wire DDR_CLK;           //DDR3 input clock  50MHz
     wire DDR_MEM_CLK;       //DDR3 memory clock 200MHz
-    wire gtx_clk_125;       //RGMII TX clock    125MHz
+    // ethernet clocks
+    wire PHY_CLK;           // eth PHY clock    25MHz
+    wire GTX_CLK;           //RGMII TX clock    125MHz
+    wire RXC_PLL;           // 125 MHz phase-shifted RXC substitute (x deg offset)
+
     wire DDR_LOCK;
     wire DDR_STOP;
 
@@ -154,17 +158,22 @@ module top (
     Gowin_PLL u_Gowin_PLL
     (
         .lock(pll_lock),
-        .clkout0(gtx_clk_125),  // 125 MHz — RGMII GTX_CLK
-        .clkout2(DDR_MEM_CLK),  // 200 MHz — DDR3
+        .clkout0(GTX_CLK),  // 125 MHz RGMII GTX_CLK
+        .clkout1(PHY_CLK),  // 25 MHz eth PHY clock 
+        .clkout2(DDR_MEM_CLK),  // 200 MHz DDR3
+        .clkout3(RXC_PLL),
         .clkin(HCLK),
         .init_clk(HCLK),
         .reset(1'b0),
         .enclk0(1'b1),
-        .enclk2(DDR_STOP)
+        .enclk1(1'b1),
+        .enclk2(DDR_STOP),
+        .enclk3(1'b1)
     );
 
     assign MCU_CLK = HCLK;
     assign DDR_CLK = HCLK;
+    assign EPHY_CLK = PHY_CLK;
 
     // =========================================================================
     // PHY reset — RTL8211 requires RST_N low for >=10ms before release.
@@ -186,6 +195,7 @@ module top (
     end
 
     assign EPHY_RST_N = phy_rst_n;
+    //assign EPHY_RST_N = hwRstn;
 
     // ------------------------------------------------------------
     // Cortex-M1 instantiation
@@ -260,10 +270,10 @@ module top (
         .RGMII_TXC(RGMII_TXC),
         .RGMII_TX_CTL(RGMII_TX_CTL),
         .RGMII_TXD(RGMII_TXD),
-        .RGMII_RXC(RGMII_RXC),
+        .RGMII_RXC(RGMII_RXC), // this C23 pin has an issue! cant get gbit speed back over it?
         .RGMII_RX_CTL(RGMII_RX_CTL),
         .RGMII_RXD(RGMII_RXD),
-        .GTX_CLK(gtx_clk_125),
+        .GTX_CLK(GTX_CLK),
         .MDC(MDC),
         .MDIO(MDIO),
 

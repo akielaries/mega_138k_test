@@ -6,23 +6,25 @@
 //Part Number: GW5AST-LV138FPG676AC2/I1
 //Device: GW5AST-138
 //Device Version: B
-//Created Time: Mon Mar  9 20:15:41 2026
+//Created Time: Tue Mar 10 22:29:23 2026
 
-module Gowin_PLL_MOD (lock, clkout0, clkout2, clkin, reset, icpsel, lpfres, lpfcap, enclk0, enclk2);
+module Gowin_PLL_MOD (lock, clkout0, clkout1, clkout2, clkout3, clkin, reset, icpsel, lpfres, lpfcap, enclk0, enclk1, enclk2, enclk3);
 
 output lock;
 output clkout0;
+output clkout1;
 output clkout2;
+output clkout3;
 input clkin;
 input reset;
 input [5:0] icpsel;
 input [2:0] lpfres;
 input [1:0] lpfcap;
 input enclk0;
+input enclk1;
 input enclk2;
+input enclk3;
 
-wire clkout1;
-wire clkout3;
 wire clkout4;
 wire clkout5;
 wire clkout6;
@@ -72,9 +74,9 @@ PLL PLL_inst (
     .PSDIR(gw_gnd),
     .PSPULSE(gw_gnd),
     .ENCLK0(enclk0),
-    .ENCLK1(gw_vcc),
+    .ENCLK1(enclk1),
     .ENCLK2(enclk2),
-    .ENCLK3(gw_vcc),
+    .ENCLK3(enclk3),
     .ENCLK4(gw_vcc),
     .ENCLK5(gw_vcc),
     .ENCLK6(gw_vcc),
@@ -88,7 +90,7 @@ defparam PLL_inst.FCLKIN = "50";
 defparam PLL_inst.IDIV_SEL = 1;
 defparam PLL_inst.FBDIV_SEL = 1;
 defparam PLL_inst.ODIV0_SEL = 8;
-defparam PLL_inst.ODIV1_SEL = 8;
+defparam PLL_inst.ODIV1_SEL = 40;
 defparam PLL_inst.ODIV2_SEL = 5;
 defparam PLL_inst.ODIV3_SEL = 8;
 defparam PLL_inst.ODIV4_SEL = 8;
@@ -98,9 +100,9 @@ defparam PLL_inst.MDIV_SEL = 20;
 defparam PLL_inst.MDIV_FRAC_SEL = 0;
 defparam PLL_inst.ODIV0_FRAC_SEL = 0;
 defparam PLL_inst.CLKOUT0_EN = "TRUE";
-defparam PLL_inst.CLKOUT1_EN = "FALSE";
+defparam PLL_inst.CLKOUT1_EN = "TRUE";
 defparam PLL_inst.CLKOUT2_EN = "TRUE";
-defparam PLL_inst.CLKOUT3_EN = "FALSE";
+defparam PLL_inst.CLKOUT3_EN = "TRUE";
 defparam PLL_inst.CLKOUT4_EN = "FALSE";
 defparam PLL_inst.CLKOUT5_EN = "FALSE";
 defparam PLL_inst.CLKOUT6_EN = "FALSE";
@@ -134,7 +136,7 @@ defparam PLL_inst.CLKOUT1_PE_COARSE = 0;
 defparam PLL_inst.CLKOUT1_PE_FINE = 0;
 defparam PLL_inst.CLKOUT2_PE_COARSE = 0;
 defparam PLL_inst.CLKOUT2_PE_FINE = 0;
-defparam PLL_inst.CLKOUT3_PE_COARSE = 0;
+defparam PLL_inst.CLKOUT3_PE_COARSE = 5;
 defparam PLL_inst.CLKOUT3_PE_FINE = 0;
 defparam PLL_inst.CLKOUT4_PE_COARSE = 0;
 defparam PLL_inst.CLKOUT4_PE_FINE = 0;

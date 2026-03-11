@@ -15,8 +15,11 @@ create_clock -name sfp_ln0_rx_clk -period 6.4 -waveform {0 3.2} [get_nets {sfp_i
 create_clock -name sfp_ln1_tx_clk -period 6.4 -waveform {0 3.2} [get_nets {sfp_inst/ln1_tx_pcs_clk}]
 create_clock -name sfp_ln1_rx_clk -period 6.4 -waveform {0 3.2} [get_nets {sfp_inst/ln1_rx_pcs_clk}]
 
-// RGMII Ethernet clocks — 125 MHz (period 8 ns)
-create_clock -name gtx_clk_125 -period 8 -waveform {0 4} [get_pins {u_Gowin_PLL/u_pll/PLL_inst/CLKOUT0}]
-create_clock -name rgmii_rxc   -period 8 -waveform {0 4} [get_ports {RGMII_RXC}]
+// RGMII Ethernet clocks
+// gtx_clk_125: 125 MHz TX clock from PLL (period 8 ns)
+// gtx_clk_125: 125 MHz TX clock from PLL clkout0
+// rgmii_rxc: 125 MHz from PLL clkout3 (90 deg phase offset) -- replaces PHY-supplied RXC on C23
+create_clock -name gtx_clk_125 -period 8  -waveform {0 4}  [get_pins {u_Gowin_PLL/u_pll/PLL_inst/CLKOUT0}]
+create_clock -name rgmii_rxc   -period 8  -waveform {0 4}  [get_pins {u_Gowin_PLL/u_pll/PLL_inst/CLKOUT3}]
 
 set_clock_groups -exclusive -group [get_clocks {hclk}] -group [get_clocks {swd_clk}] -group [get_clocks {ddr3_sys_clk}] -group [get_clocks {ddr3_mem_clk}] -group [get_clocks {sfp_ln0_tx_clk}] -group [get_clocks {sfp_ln0_rx_clk}] -group [get_clocks {sfp_ln1_tx_clk}] -group [get_clocks {sfp_ln1_rx_clk}] -group [get_clocks {gtx_clk_125}] -group [get_clocks {rgmii_rxc}]

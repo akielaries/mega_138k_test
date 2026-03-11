@@ -4,6 +4,10 @@ Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/ahb1_sram.v'
 Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/apb_ahb_bridge.v'
 Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/apb_memmap.v'
 Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/gowin_empu_m1.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/temp/gw_empu_m1/triple_speed_mac_param.v'
+WARN  (EX3209) : Root scope declaration is not allowed in Verilog 2001 mode("/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/temp/gw_empu_m1/triple_speed_mac_param.v":1)
+WARN  (EX3209) : Root scope declaration is not allowed in Verilog 2001 mode("/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/temp/gw_empu_m1/triple_speed_mac_param.v":2)
+WARN  (EX3209) : Root scope declaration is not allowed in Verilog 2001 mode("/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/temp/gw_empu_m1/triple_speed_mac_param.v":3)
 Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll/gowin_pll.v'
 Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll/gowin_pll_mod.v'
 Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/gpio.v'
@@ -33,7 +37,10 @@ Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/sfp_regs.v'
 Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/sysinfo.v'
 Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/sysinfo_regs.v'
 Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/top.v'
-WARN  (EX3073) : Port 'APB1PPROT' remains unconnected for this instance("/home/akiel/trunk/pub/mega_138k_test/src/top.v":272)
+WARN  (EX2582) : Parameter 'RGMII_INPUT_DELAY_VALUE' declared inside compilation unit '$unit_src_ahb1_sram_v' shall be treated as localparam("/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/temp/gw_empu_m1/triple_speed_mac_param.v":1)
+WARN  (EX2582) : Parameter 'MIIM_CLK_DIVIDER' declared inside compilation unit '$unit_src_ahb1_sram_v' shall be treated as localparam("/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/temp/gw_empu_m1/triple_speed_mac_param.v":2)
+WARN  (EX2582) : Parameter 'DEVICE' declared inside compilation unit '$unit_src_ahb1_sram_v' shall be treated as localparam("/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/temp/gw_empu_m1/triple_speed_mac_param.v":3)
+WARN  (EX3073) : Port 'APB1PPROT' remains unconnected for this instance("/home/akiel/trunk/pub/mega_138k_test/src/top.v":282)
 Compiling module 'top'("/home/akiel/trunk/pub/mega_138k_test/src/top.v":17)
 Compiling module 'Gowin_PLL'("/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll/gowin_pll.v":1)
 Compiling module 'Gowin_PLL_MOD'("/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll/gowin_pll_mod.v":11)
@@ -88,7 +95,6 @@ WARN  (EX0211) : The output port "error_stat_o[3]" of module "prbs7_chk(INIT=8'b
 WARN  (EX0211) : The output port "error_stat_o[2]" of module "prbs7_chk(INIT=8'b11111111)" has no driver, assigning undriven bits to Z, simulation mismatch possible("/home/akiel/trunk/pub/mega_138k_test/src/prbs7_chk.v":51)
 WARN  (EX0211) : The output port "error_stat_o[1]" of module "prbs7_chk(INIT=8'b11111111)" has no driver, assigning undriven bits to Z, simulation mismatch possible("/home/akiel/trunk/pub/mega_138k_test/src/prbs7_chk.v":51)
 WARN  (EX0211) : The output port "error_stat_o[0]" of module "prbs7_chk(INIT=8'b11111111)" has no driver, assigning undriven bits to Z, simulation mismatch possible("/home/akiel/trunk/pub/mega_138k_test/src/prbs7_chk.v":51)
-WARN  (EX0211) : The output port "EPHY_CLK" of module "top" has no driver, assigning undriven bits to Z, simulation mismatch possible("/home/akiel/trunk/pub/mega_138k_test/src/top.v":46)
 [5%] Running netlist conversion ...
 Running device independent optimization ...
 [10%] Optimizing Phase 0 completed

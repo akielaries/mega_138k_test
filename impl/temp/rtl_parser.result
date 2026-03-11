@@ -17,7 +17,7 @@
   "SubInsts" : [
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/top.v",
-    "InstLine" : 154,
+    "InstLine" : 158,
     "InstName" : "u_Gowin_PLL",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll/gowin_pll.v",
     "ModuleLine" : 1,
@@ -25,7 +25,7 @@
     "SubInsts" : [
      {
       "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll/gowin_pll.v",
-      "InstLine" : 27,
+      "InstLine" : 35,
       "InstName" : "u_pll",
       "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll/gowin_pll_mod.v",
       "ModuleLine" : 11,
@@ -33,7 +33,7 @@
      },
      {
       "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll/gowin_pll.v",
-      "InstLine" : 41,
+      "InstLine" : 53,
       "InstName" : "u_pll_init",
       "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/pll_init.v",
       "ModuleLine" : 3,
@@ -43,7 +43,7 @@
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/top.v",
-    "InstLine" : 193,
+    "InstLine" : 203,
     "InstName" : "Cortex_M1_instance",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/gowin_empu_m1.v",
     "ModuleLine" : 75664,
@@ -69,7 +69,7 @@
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/top.v",
-    "InstLine" : 283,
+    "InstLine" : 293,
     "InstName" : "ahb_ram_inst",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/ahb1_sram.v",
     "ModuleLine" : 2,
@@ -77,7 +77,7 @@
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/top.v",
-    "InstLine" : 326,
+    "InstLine" : 336,
     "InstName" : "gwct_inst",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/gwct_bridge.v",
     "ModuleLine" : 57,
@@ -111,7 +111,7 @@
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/top.v",
-    "InstLine" : 374,
+    "InstLine" : 384,
     "InstName" : "apb_memmap_inst",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/apb_memmap.v",
     "ModuleLine" : 1,
@@ -165,7 +165,7 @@
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/top.v",
-    "InstLine" : 401,
+    "InstLine" : 411,
     "InstName" : "sfp_inst",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/sfp_loopback.v",
     "ModuleLine" : 14,
