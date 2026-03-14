@@ -1,7 +1,7 @@
 {
  "BACKGROUND_PROGRAMMING" : "off",
  "COMPRESS" : false,
- "CPU" : false,
+ "CPU" : true,
  "CRC_CHECK" : true,
  "Clock_Route_Order" : 0,
  "Co-Place_IO_Registers" : false,
@@ -75,7 +75,7 @@
  "SEU_HANDLER" : false,
  "SEU_HANDLER_CHECKSUM" : false,
  "SEU_HANDLER_MODE" : "auto",
- "SSPI" : false,
+ "SSPI" : true,
  "STOP_SEU_HANDLER" : false,
  "SerDes_retiming" : false,
  "Show_All_Warnings" : false,

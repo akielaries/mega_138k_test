@@ -1,5 +1,5 @@
 // =============================================================================
-// top.v — Gowin EMPU Cortex-M1 + GWCT debug module
+// top.v  Gowin EMPU Cortex-M1 + GWCT debug module
 //
 // GWCT (Gowin Watch & Control Tool) is a UART-based debug master that can
 // read and write APB-mapped registers independently of the Cortex-M1.
@@ -130,7 +130,7 @@ module top (
     // ethernet clocks
     wire PHY_CLK;           // eth PHY clock    25MHz
     wire GTX_CLK;           //RGMII TX clock    125MHz
-    wire RXC_PLL;           // 125 MHz phase-shifted RXC substitute (x deg offset)
+    wire RXC_PLL;           // 125 MHz phase-shifted RXC substitute (x deg offset) this actually works like shit and drops a lot of packets...
 
     wire DDR_LOCK;
     wire DDR_STOP;
@@ -176,7 +176,7 @@ module top (
     assign EPHY_CLK = PHY_CLK;
 
     // =========================================================================
-    // PHY reset — RTL8211 requires RST_N low for >=10ms before release.
+    // PHY reset  RTL8211 requires RST_N low for >=10ms before release.
     // 20-bit counter at 50 MHz rolls over at ~20.97ms, more than enough.
     // =========================================================================
     reg [19:0] phy_rst_cnt;
@@ -355,7 +355,7 @@ module top (
     );
 
     // =========================================================================
-    // APB bus mux — GWCT takes priority over Cortex-M1
+    // APB bus mux GWCT takes priority over Cortex-M1
     //
     //   gwct_apb_sel = 1  →  GWCT drives the bus
     //   gwct_apb_sel = 0  →  Cortex-M1 drives the bus
@@ -374,7 +374,7 @@ module top (
     assign APB1PSLVERR = slave_PSLVERR;
 
     // =========================================================================
-    // apb_memmap slave — sees muxed bus
+    // apb_memmap slave  sees muxed bus
     // =========================================================================
     wire [21:0] sfp_stat;
     wire [31:0] ln0_rx_snap, ln1_rx_snap;
