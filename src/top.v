@@ -27,6 +27,7 @@ module top (
     output LOCKUP,
     output HALTED,
     inout BOOT_LED_A,
+    output WS2812_LED,
     // SFP+ loopback test
     output SFP_TX_DIS_LN0,
     output SFP_TX_DIS_LN1,
@@ -83,6 +84,14 @@ module top (
     end
 
     assign BOOT_LED_A = gpio1_out;
+
+    reg [23:0] ws_color;
+
+    ws2812_driver ws_drv (
+        .clk(HCLK),
+        .rstn(hwRstn),
+        .ws_out(WS2812_LED)
+    );
 
     // =========================================================================
     // APB1 wires from Cortex-M1 APB bridge

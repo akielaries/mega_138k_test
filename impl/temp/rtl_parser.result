@@ -17,7 +17,15 @@
   "SubInsts" : [
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/top.v",
-    "InstLine" : 158,
+    "InstLine" : 90,
+    "InstName" : "ws_drv",
+    "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/ws2812_driver.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "ws2812_driver"
+   },
+   {
+    "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/top.v",
+    "InstLine" : 167,
     "InstName" : "u_Gowin_PLL",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll/gowin_pll.v",
     "ModuleLine" : 1,
@@ -43,7 +51,7 @@
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/top.v",
-    "InstLine" : 203,
+    "InstLine" : 212,
     "InstName" : "Cortex_M1_instance",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/gowin_empu_m1.v",
     "ModuleLine" : 75664,
@@ -69,7 +77,7 @@
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/top.v",
-    "InstLine" : 293,
+    "InstLine" : 302,
     "InstName" : "ahb_ram_inst",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/ahb1_sram.v",
     "ModuleLine" : 2,
@@ -77,7 +85,7 @@
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/top.v",
-    "InstLine" : 336,
+    "InstLine" : 345,
     "InstName" : "gwct_inst",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/gwct_bridge.v",
     "ModuleLine" : 57,
@@ -111,7 +119,7 @@
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/top.v",
-    "InstLine" : 384,
+    "InstLine" : 393,
     "InstName" : "apb_memmap_inst",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/apb_memmap.v",
     "ModuleLine" : 1,
@@ -165,7 +173,7 @@
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/top.v",
-    "InstLine" : 411,
+    "InstLine" : 420,
     "InstName" : "sfp_inst",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/sfp_loopback.v",
     "ModuleLine" : 14,

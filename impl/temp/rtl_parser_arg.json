@@ -96,6 +96,10 @@
   {
    "Path" : "/home/akiel/trunk/pub/mega_138k_test/src/top.v",
    "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_138k_test/src/ws2812_driver.v",
+   "Type" : "verilog"
   }
  ],
  "IncludePath" : [
