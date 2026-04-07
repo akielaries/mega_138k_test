@@ -22,4 +22,7 @@ create_clock -name sfp_ln1_rx_clk -period 6.4 -waveform {0 3.2} [get_nets {sfp_i
 create_clock -name gtx_clk_125 -period 8  -waveform {0 4}  [get_pins {u_Gowin_PLL/u_pll/PLL_inst/CLKOUT0}]
 create_clock -name rgmii_rxc   -period 8  -waveform {0 4}  [get_pins {u_Gowin_PLL/u_pll/PLL_inst/CLKOUT3}]
 
-set_clock_groups -exclusive -group [get_clocks {hclk}] -group [get_clocks {swd_clk}] -group [get_clocks {ddr3_sys_clk}] -group [get_clocks {ddr3_mem_clk}] -group [get_clocks {sfp_ln0_tx_clk}] -group [get_clocks {sfp_ln0_rx_clk}] -group [get_clocks {sfp_ln1_tx_clk}] -group [get_clocks {sfp_ln1_rx_clk}] -group [get_clocks {gtx_clk_125}] -group [get_clocks {rgmii_rxc}]
+// MultiFlex TX engine clock: 200 MHz from PLL_ffc clkout1 (ODIV1_SEL=4, VCO=800 MHz)
+create_clock -name mfx_clk_fast -period 5 -waveform {0 2.5} [get_pins {u_multiflex_pll/u_pll/PLL_inst/CLKOUT1}]
+
+set_clock_groups -exclusive -group [get_clocks {hclk}] -group [get_clocks {swd_clk}] -group [get_clocks {ddr3_sys_clk}] -group [get_clocks {ddr3_mem_clk}] -group [get_clocks {sfp_ln0_tx_clk}] -group [get_clocks {sfp_ln0_rx_clk}] -group [get_clocks {sfp_ln1_tx_clk}] -group [get_clocks {sfp_ln1_rx_clk}] -group [get_clocks {gtx_clk_125}] -group [get_clocks {rgmii_rxc}] -group [get_clocks {mfx_clk_fast}]

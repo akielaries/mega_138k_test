@@ -18,6 +18,10 @@ module top (
     input HCLK,
     input hwRstn,
     inout [15:0] GPIO,
+    inout        MULTIFLEX_CLK,
+    output [2:0] MULTIFLEX_TX,
+    input  [2:0] MULTIFLEX_RX,
+    output       MULTIFLEX_SYNC,
     inout JTAG_7_SWDIO,
     inout JTAG_9_SWDCLK,
     input UART1RXD,
@@ -183,6 +187,17 @@ module top (
     assign MCU_CLK = HCLK;
     assign DDR_CLK = HCLK;
     assign EPHY_CLK = PHY_CLK;
+
+    // =========================================================================
+    // PLL_ffc: 50 MHz HCLK -> 400 MHz for multiflex TX engine
+    // =========================================================================
+    wire multiflex_clk_fast;
+    Gowin_PLL_ffc u_multiflex_pll (
+        .clkin   (HCLK),
+        .init_clk(HCLK),
+        .clkout1 (multiflex_clk_fast),
+        .clkout0 ()
+    );
 
     // =========================================================================
     // PHY reset  RTL8211 requires RST_N low for >=10ms before release.
@@ -390,6 +405,9 @@ module top (
     wire        sfp_tx_mode;
     wire [31:0] sfp_tx_pattern;
 
+    wire [31:0] memmap_prdata;
+    wire        memmap_pready;
+
     apb_memmap apb_memmap_inst (
         .APBCLK      (APB1PCLK),
         .APBRESET    (APB1PRESET),
@@ -398,15 +416,45 @@ module top (
         .PENABLE     (mux_PENABLE),
         .PWRITE      (mux_PWRITE),
         .PWDATA      (mux_PWDATA),
-        .PRDATA      (slave_PRDATA),
-        .PREADY      (slave_PREADY),
-        .PSLVERR     (slave_PSLVERR),
+        .PRDATA      (memmap_prdata),
+        .PREADY      (memmap_pready),
+        .PSLVERR     (),
         .sfp_stat    (sfp_stat),
         .ln0_rx_snap (ln0_rx_snap),
         .ln1_rx_snap (ln1_rx_snap),
         .tx_mode     (sfp_tx_mode),
         .tx_pattern  (sfp_tx_pattern)
     );
+
+    // =========================================================================
+    // multiflex peripheral at APB offset 0x60 (24 bytes: 0x60-0x77)
+    // TX engine clock: 400 MHz from PLL_ffc
+    // =========================================================================
+    wire        mfx_sel   = mux_PSEL && (mux_PADDR[19:0] >= 20'h60 &&
+                                         mux_PADDR[19:0] <  20'h78);
+    wire [31:0] mfx_prdata;
+    wire        mfx_pready;
+
+    multiflex #(.NUM_LANES(3)) mfx_inst (
+        .pclk    (APB1PCLK),
+        .prstn   (APB1PRESET),
+        .clk     (multiflex_clk_fast),
+        .paddr   (mux_PADDR),
+        .psel    (mux_PSEL & mfx_sel),
+        .penable (mux_PENABLE),
+        .pwrite  (mux_PWRITE),
+        .pwdata  (mux_PWDATA),
+        .prdata  (mfx_prdata),
+        .pready  (mfx_pready),
+        .pslverr (),
+        .mfx_clk  (MULTIFLEX_CLK),
+        .mfx_tx   (MULTIFLEX_TX),
+        .mfx_sync (MULTIFLEX_SYNC)
+    );
+
+    assign slave_PRDATA  = mfx_sel ? mfx_prdata  : memmap_prdata;
+    assign slave_PREADY  = mfx_sel ? mfx_pready  : memmap_pready;
+    assign slave_PSLVERR = 1'b0;
 
     // =========================================================================
     // SFP+ 10.3125G PRBS7 loopback

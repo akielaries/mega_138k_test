@@ -30,6 +30,30 @@
    "Type" : "verilog"
   },
   {
+   "Path" : "/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll_ffc/gowin_pll_ffc.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll_ffc/gowin_pll_ffc_mod.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll_ffc/pll_init_ffc.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_138k_test/src/multiflex.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_138k_test/src/multiflex_regs.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_138k_test/src/multiflex_tx.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "/home/akiel/trunk/pub/mega_138k_test/src/gpio.v",
    "Type" : "verilog"
   },

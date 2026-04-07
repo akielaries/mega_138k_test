@@ -10,6 +10,12 @@ WARN  (EX3209) : Root scope declaration is not allowed in Verilog 2001 mode("/ho
 WARN  (EX3209) : Root scope declaration is not allowed in Verilog 2001 mode("/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/temp/gw_empu_m1/triple_speed_mac_param.v":3)
 Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll/gowin_pll.v'
 Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll/gowin_pll_mod.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll_ffc/gowin_pll_ffc.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll_ffc/gowin_pll_ffc_mod.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll_ffc/pll_init_ffc.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/multiflex.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/multiflex_regs.v'
+Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/multiflex_tx.v'
 Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/gpio.v'
 Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/gpio_regs.v'
 Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/gwct_apb_master.v'
@@ -41,7 +47,7 @@ Analyzing Verilog file '/home/akiel/trunk/pub/mega_138k_test/src/ws2812_driver.v
 WARN  (EX2582) : Parameter 'RGMII_INPUT_DELAY_VALUE' declared inside compilation unit '$unit_src_ahb1_sram_v' shall be treated as localparam("/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/temp/gw_empu_m1/triple_speed_mac_param.v":1)
 WARN  (EX2582) : Parameter 'MIIM_CLK_DIVIDER' declared inside compilation unit '$unit_src_ahb1_sram_v' shall be treated as localparam("/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/temp/gw_empu_m1/triple_speed_mac_param.v":2)
 WARN  (EX2582) : Parameter 'DEVICE' declared inside compilation unit '$unit_src_ahb1_sram_v' shall be treated as localparam("/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/temp/gw_empu_m1/triple_speed_mac_param.v":3)
-WARN  (EX3073) : Port 'APB1PPROT' remains unconnected for this instance("/home/akiel/trunk/pub/mega_138k_test/src/top.v":291)
+WARN  (EX3073) : Port 'APB1PPROT' remains unconnected for this instance("/home/akiel/trunk/pub/mega_138k_test/src/top.v":306)
 Compiling module 'top'("/home/akiel/trunk/pub/mega_138k_test/src/top.v":17)
 Compiling module 'ws2812_driver'("/home/akiel/trunk/pub/mega_138k_test/src/ws2812_driver.v":1)
 WARN  (EX3791) : Expression size 26 truncated to fit in target size 25("/home/akiel/trunk/pub/mega_138k_test/src/ws2812_driver.v":31)
@@ -53,6 +59,11 @@ WARN  (EX3791) : Expression size 17 truncated to fit in target size 16("/home/ak
 Compiling module 'Gowin_PLL'("/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll/gowin_pll.v":1)
 Compiling module 'Gowin_PLL_MOD'("/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll/gowin_pll_mod.v":11)
 Compiling module 'PLL_INIT(CLK_PERIOD=20,MULTI_FAC=20)'("/home/akiel/trunk/pub/mega_138k_test/src/pll_init.v":3)
+WARN  (EX3791) : Expression size 5 truncated to fit in target size 4("/home/akiel/trunk/pub/mega_138k_test/src/pll_init.v":179)
+WARN  (EX3791) : Expression size 18 truncated to fit in target size 17("/home/akiel/trunk/pub/mega_138k_test/src/pll_init.v":207)
+Compiling module 'Gowin_PLL_ffc'("/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll_ffc/gowin_pll_ffc.v":1)
+Compiling module 'Gowin_PLL_ffc_MOD'("/home/akiel/trunk/pub/mega_138k_test/src/gowin_pll_ffc/gowin_pll_ffc_mod.v":11)
+Compiling module 'PLL_INIT(CLK_PERIOD=20,MULTI_FAC=16)'("/home/akiel/trunk/pub/mega_138k_test/src/pll_init.v":3)
 WARN  (EX3791) : Expression size 5 truncated to fit in target size 4("/home/akiel/trunk/pub/mega_138k_test/src/pll_init.v":179)
 WARN  (EX3791) : Expression size 18 truncated to fit in target size 17("/home/akiel/trunk/pub/mega_138k_test/src/pll_init.v":207)
 Compiling module 'Gowin_EMPU_M1_Top'("/home/akiel/trunk/pub/mega_138k_test/src/gowin_empu_m1/gowin_empu_m1.v":75664)
@@ -78,6 +89,14 @@ Compiling module 'sysinfo_regs'("/home/akiel/trunk/pub/mega_138k_test/src/sysinf
 Compiling module 'gpio'("/home/akiel/trunk/pub/mega_138k_test/src/gpio.v":1)
 Compiling module 'gpio_regs'("/home/akiel/trunk/pub/mega_138k_test/src/gpio_regs.v":7)
 Compiling module 'sfp_regs'("/home/akiel/trunk/pub/mega_138k_test/src/sfp_regs.v":7)
+Compiling module 'multiflex'("/home/akiel/trunk/pub/mega_138k_test/src/multiflex.v":19)
+Compiling module 'multiflex_regs'("/home/akiel/trunk/pub/mega_138k_test/src/multiflex_regs.v":7)
+Compiling module 'multiflex_tx'("/home/akiel/trunk/pub/mega_138k_test/src/multiflex_tx.v":11)
+Extracting RAM for identifier 'fifo'("/home/akiel/trunk/pub/mega_138k_test/src/multiflex_tx.v":43)
+WARN  (EX3791) : Expression size 6 truncated to fit in target size 5("/home/akiel/trunk/pub/mega_138k_test/src/multiflex_tx.v":59)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 8("/home/akiel/trunk/pub/mega_138k_test/src/multiflex_tx.v":100)
+WARN  (EX3791) : Expression size 6 truncated to fit in target size 5("/home/akiel/trunk/pub/mega_138k_test/src/multiflex_tx.v":156)
+WARN  (EX3791) : Expression size 6 truncated to fit in target size 5("/home/akiel/trunk/pub/mega_138k_test/src/multiflex_tx.v":177)
 Compiling module 'sfp_loopback'("/home/akiel/trunk/pub/mega_138k_test/src/sfp_loopback.v":14)
 Compiling module 'SerDes_Top'("/home/akiel/trunk/pub/mega_138k_test/src/serdes/serdes.v":11)
 Compiling module 'Customized_PHY_Top'("/home/akiel/trunk/pub/mega_138k_test/src/serdes/customized_phy/customized_phy.v":10)
@@ -104,6 +123,7 @@ WARN  (EX0211) : The output port "error_stat_o[2]" of module "prbs7_chk(INIT=8'b
 WARN  (EX0211) : The output port "error_stat_o[1]" of module "prbs7_chk(INIT=8'b11111111)" has no driver, assigning undriven bits to Z, simulation mismatch possible("/home/akiel/trunk/pub/mega_138k_test/src/prbs7_chk.v":51)
 WARN  (EX0211) : The output port "error_stat_o[0]" of module "prbs7_chk(INIT=8'b11111111)" has no driver, assigning undriven bits to Z, simulation mismatch possible("/home/akiel/trunk/pub/mega_138k_test/src/prbs7_chk.v":51)
 [5%] Running netlist conversion ...
+WARN  (CV0016) : Input MULTIFLEX_RX is unused("/home/akiel/trunk/pub/mega_138k_test/src/top.v":23)
 Running device independent optimization ...
 [10%] Optimizing Phase 0 completed
 [15%] Optimizing Phase 1 completed
