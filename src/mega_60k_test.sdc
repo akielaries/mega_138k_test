@@ -22,8 +22,16 @@ create_clock -name sfp_ln1_rx_clk -period 6.4 -waveform {0 3.2} [get_nets {sfp_i
 create_clock -name gtx_clk_125 -period 8  -waveform {0 4}  [get_pins {u_Gowin_PLL/u_pll/PLL_inst/CLKOUT0}]
 create_clock -name rgmii_rxc   -period 8  -waveform {0 4}  [get_pins {u_Gowin_PLL/u_pll/PLL_inst/CLKOUT3}]
 
-// MultiFlex TX engine clock: 100 MHz from PLL_ffc clkout0 (ODIV0_SEL=8, VCO=800 MHz)
-// get_nets targets the synthesis-visible net; get_pins targets the PnR netlist (ignored by synthesis)
-create_clock -name mfx_clk_fast -period 10 -waveform {0 5} [get_nets {multiflex_clk_fast}]
+// MultiFlex TX engine clock: 200 MHz from PLL_ffc clkout0 (ODIV0_SEL=4, VCO=800 MHz)
+// routed through CLKDIV (DIV_MODE=1, pass-through) onto HCLK spine
+// constrain both the raw PLL net and the CLKDIV output so synthesis and PnR
+// both see the frequency; the tool propagates the constraint through CLKDIV
+create_clock -name mfx_clk_fast -period 5 -waveform {0 2.5} [get_nets {multiflex_clk_fast}]
+create_clock -name mfx_clk      -period 5 -waveform {0 2.5} [get_nets {multiflex_clk}]
 
-set_clock_groups -exclusive -group [get_clocks {hclk}] -group [get_clocks {swd_clk}] -group [get_clocks {ddr3_sys_clk}] -group [get_clocks {ddr3_mem_clk}] -group [get_clocks {sfp_ln0_tx_clk}] -group [get_clocks {sfp_ln0_rx_clk}] -group [get_clocks {sfp_ln1_tx_clk}] -group [get_clocks {sfp_ln1_rx_clk}] -group [get_clocks {gtx_clk_125}] -group [get_clocks {rgmii_rxc}] -group [get_clocks {mfx_clk_fast}]
+set_clock_groups -exclusive -group [get_clocks {hclk}] -group [get_clocks {swd_clk}] -group [get_clocks {ddr3_sys_clk}] -group [get_clocks {ddr3_mem_clk}] -group [get_clocks {sfp_ln0_tx_clk}] -group [get_clocks {sfp_ln0_rx_clk}] -group [get_clocks {sfp_ln1_tx_clk}] -group [get_clocks {sfp_ln1_rx_clk}] -group [get_clocks {gtx_clk_125}] -group [get_clocks {rgmii_rxc}] -group [get_clocks {mfx_clk_fast}] -group [get_clocks {mfx_clk}]
+
+// rgmii_rxc -> gtx_clk_125 paths inside the Gowin triple-speed MAC IP are
+// internally synchronized; the tool sees a combinational arc between the two
+// recovered clocks but there is no valid timing relationship to check.
+set_false_path -from [get_clocks {rgmii_rxc}] -to [get_clocks {gtx_clk_125}]

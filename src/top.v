@@ -192,15 +192,28 @@ module top (
     assign EPHY_CLK = PHY_CLK;
 
     // =========================================================================
-    // PLL_ffc: 50 MHz HCLK -> 400 MHz for multiflex TX engine
+    // PLL_ffc: 50 MHz HCLK -> 200 MHz for multiflex TX engine
+    // multiflex_clk_fast: raw PLL output (fabric net)
+    // multiflex_clk: same frequency, routed through CLKDIV onto HCLK spine
+    //   CLKDIV DIV_MODE="1" is a pass-through but forces the signal onto the
+    //   global clock network, eliminating the high-skew fabric routing that
+    //   limits Fmax to ~136 MHz on a plain fabric net
     // =========================================================================
     wire multiflex_clk_fast;
+    wire multiflex_clk;
     Gowin_PLL_ffc u_multiflex_pll (
         .clkin   (HCLK),
         .init_clk(HCLK),
         //.reset(hwRstn), //input  reset
         .clkout0 (multiflex_clk_fast)
     );
+    CLKDIV u_mfx_clkdiv (
+        .HCLKIN (multiflex_clk_fast),
+        .RESETN (1'b1),
+        .CALIB  (1'b0),
+        .CLKOUT (multiflex_clk)
+    );
+    defparam u_mfx_clkdiv.DIV_MODE = "1";
 
     // =========================================================================
     // PHY reset  RTL8211 requires RST_N low for >=10ms before release.
@@ -442,7 +455,7 @@ module top (
     multiflex #(.NUM_LANES(2)) mfx_inst (
         .pclk    (APB1PCLK),
         .prstn   (APB1PRESET),
-        .clk     (multiflex_clk_fast),
+        .clk     (multiflex_clk),
         .paddr   (mux_PADDR),
         .psel    (mux_PSEL & mfx_sel),
         .penable (mux_PENABLE),
