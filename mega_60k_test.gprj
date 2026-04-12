@@ -18,7 +18,9 @@
         <File path="src/gowin_pll_ffc/pll_init_ffc.v" type="file.verilog" enable="1"/>
         <File path="src/multiflex.v" type="file.verilog" enable="1"/>
         <File path="src/multiflex_regs.v" type="file.verilog" enable="1"/>
+        <File path="src/cheby_dpssram.v" type="file.verilog" enable="1"/>
         <File path="src/multiflex_tx.v" type="file.verilog" enable="1"/>
+        <File path="src/multiflex_rx.v" type="file.verilog" enable="1"/>
         <File path="src/gpio.v" type="file.verilog" enable="1"/>
         <File path="src/gpio_regs.v" type="file.verilog" enable="1"/>
         <File path="src/gwct_apb_master.v" type="file.verilog" enable="1"/>

@@ -18,10 +18,13 @@ module top (
     input HCLK,
     input hwRstn,
     inout [15:0] GPIO,
-    inout        MULTIFLEX_CLK,
-    output [2:0] MULTIFLEX_TX,
-    input  [2:0] MULTIFLEX_RX,
-    output       MULTIFLEX_SYNC,
+    // FFC connector: side A transmits, side B transmits (independent directions)
+    output       MFX_CLK_A,
+    output       MFX_SYNC_A,
+    output [1:0] MFX_TX_A,
+    input  [1:0] MFX_TX_B,
+    input        MFX_SYNC_B,
+    input        MFX_CLK_B,
     inout JTAG_7_SWDIO,
     inout JTAG_9_SWDCLK,
     input UART1RXD,
@@ -195,8 +198,8 @@ module top (
     Gowin_PLL_ffc u_multiflex_pll (
         .clkin   (HCLK),
         .init_clk(HCLK),
-        .clkout1 (multiflex_clk_fast),
-        .clkout0 ()
+        //.reset(hwRstn), //input  reset
+        .clkout0 (multiflex_clk_fast)
     );
 
     // =========================================================================
@@ -427,15 +430,16 @@ module top (
     );
 
     // =========================================================================
-    // multiflex peripheral at APB offset 0x60 (24 bytes: 0x60-0x77)
+    // multiflex peripheral at APB offset 0x8000
+    // register map: ctrl/status at +0x00, tx_buf at +0x2000, rx_buf at +0x4000
+    // total: 0x6000 bytes, so range is 0x8000-0xDFFF
     // TX engine clock: 400 MHz from PLL_ffc
     // =========================================================================
-    wire        mfx_sel   = mux_PSEL && (mux_PADDR[19:0] >= 20'h60 &&
-                                         mux_PADDR[19:0] <  20'h78);
+    wire        mfx_sel   = mux_PSEL && (mux_PADDR[19:15] == 5'b00001);
     wire [31:0] mfx_prdata;
     wire        mfx_pready;
 
-    multiflex #(.NUM_LANES(3)) mfx_inst (
+    multiflex #(.NUM_LANES(2)) mfx_inst (
         .pclk    (APB1PCLK),
         .prstn   (APB1PRESET),
         .clk     (multiflex_clk_fast),
@@ -447,9 +451,10 @@ module top (
         .prdata  (mfx_prdata),
         .pready  (mfx_pready),
         .pslverr (),
-        .mfx_clk  (MULTIFLEX_CLK),
-        .mfx_tx   (MULTIFLEX_TX),
-        .mfx_sync (MULTIFLEX_SYNC)
+        .mfx_clk  (MFX_CLK_A),
+        .mfx_tx   (MFX_TX_A),
+        .mfx_sync (MFX_SYNC_A),
+        .mfx_rx   (MFX_TX_B)
     );
 
     assign slave_PRDATA  = mfx_sel ? mfx_prdata  : memmap_prdata;

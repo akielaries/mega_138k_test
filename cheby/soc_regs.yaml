@@ -1,0 +1,21 @@
+memory-map:
+  bus: apb-32
+  name: soc
+  description: APB1 peripheral address space -- base address 0x60000000 defined in firmware
+  children:
+    - submap:
+        name: sysinfo
+        description: system information registers
+        filename: sysinfo_regs.yaml
+    - submap:
+        name: gpio
+        description: GPIO registers
+        filename: gpio_regs.yaml
+    - submap:
+        name: multiflex
+        description: MultiFlex serial link registers
+        filename: multiflex_regs.yaml
+    - submap:
+        name: sfp
+        description: SFP SerDes registers
+        filename: sfp_regs.yaml

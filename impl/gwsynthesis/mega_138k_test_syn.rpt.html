@@ -67,7 +67,9 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 /home/akiel/trunk/pub/mega_138k_test/src/gowin_pll_ffc/pll_init_ffc.v<br>
 /home/akiel/trunk/pub/mega_138k_test/src/multiflex.v<br>
 /home/akiel/trunk/pub/mega_138k_test/src/multiflex_regs.v<br>
+/home/akiel/trunk/pub/mega_138k_test/src/cheby_dpssram.v<br>
 /home/akiel/trunk/pub/mega_138k_test/src/multiflex_tx.v<br>
+/home/akiel/trunk/pub/mega_138k_test/src/multiflex_rx.v<br>
 /home/akiel/trunk/pub/mega_138k_test/src/gpio.v<br>
 /home/akiel/trunk/pub/mega_138k_test/src/gpio_regs.v<br>
 /home/akiel/trunk/pub/mega_138k_test/src/gwct_apb_master.v<br>
@@ -110,7 +112,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Mon Apr  6 22:41:49 2026
+<td>Sat Apr 11 11:23:18 2026
 </td>
 </tr>
 <tr>
@@ -126,11 +128,11 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 </tr>
 <tr>
 <td class="label">Synthesis Process</td>
-<td>Running parser:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s, Peak memory usage = 3434.930MB<br/>Running netlist conversion:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s, Peak memory usage = 0MB<br/>Running device independent optimization:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 0: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s, Peak memory usage = 3434.930MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 1: CPU time = 0h 0m 0.76s, Elapsed time = 0h 0m 0.756s, Peak memory usage = 3434.930MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 2: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s, Peak memory usage = 3434.930MB<br/>Running inference:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 0: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s, Peak memory usage = 3434.930MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 1: CPU time = 0h 0m 0.08s, Elapsed time = 0h 0m 0.076s, Peak memory usage = 3434.930MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 2: CPU time = 0h 0m 0.147s, Elapsed time = 0h 0m 0.147s, Peak memory usage = 3434.930MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 3: CPU time = 0h 0m 0.091s, Elapsed time = 0h 0m 0.089s, Peak memory usage = 3434.930MB<br/>Running technical mapping:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 0: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s, Peak memory usage = 3434.930MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 1: CPU time = 0h 0m 0.382s, Elapsed time = 0h 0m 0.378s, Peak memory usage = 3434.930MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 2: CPU time = 0h 0m 0.16s, Elapsed time = 0h 0m 0.157s, Peak memory usage = 3434.930MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 3: CPU time = 0h 0m 5s, Elapsed time = 0h 0m 5s, Peak memory usage = 3434.930MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 4: CPU time = 0h 0m 0.996s, Elapsed time = 0h 0m 0.99s, Peak memory usage = 3434.930MB<br/>Generate output files:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s, Peak memory usage = 3434.930MB<br/></td>
+<td>Running parser:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 3s, Elapsed time = 0h 0m 2s, Peak memory usage = 4312.039MB<br/>Running netlist conversion:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s, Peak memory usage = 0MB<br/>Running device independent optimization:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 0: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s, Peak memory usage = 4312.039MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 1: CPU time = 0h 0m 0.728s, Elapsed time = 0h 0m 0.722s, Peak memory usage = 4312.039MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 2: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s, Peak memory usage = 4312.039MB<br/>Running inference:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 0: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s, Peak memory usage = 4312.039MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 1: CPU time = 0h 0m 0.1s, Elapsed time = 0h 0m 0.099s, Peak memory usage = 4312.039MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 2: CPU time = 0h 0m 0.144s, Elapsed time = 0h 0m 0.143s, Peak memory usage = 4312.039MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 3: CPU time = 0h 0m 0.077s, Elapsed time = 0h 0m 0.075s, Peak memory usage = 4312.039MB<br/>Running technical mapping:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 0: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s, Peak memory usage = 4312.039MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 1: CPU time = 0h 0m 0.378s, Elapsed time = 0h 0m 0.375s, Peak memory usage = 4312.039MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 2: CPU time = 0h 0m 0.232s, Elapsed time = 0h 0m 0.229s, Peak memory usage = 4312.039MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 3: CPU time = 0h 0m 6s, Elapsed time = 0h 0m 6s, Peak memory usage = 4312.039MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 4: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s, Peak memory usage = 4312.039MB<br/>Generate output files:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s, Peak memory usage = 4312.039MB<br/></td>
 </tr>
 <tr>
 <td class="label">Total Time and Memory Usage</td>
-<td>CPU time = 0h 0m 14s, Elapsed time = 0h 0m 14s, Peak memory usage = 3434.930MB</td>
+<td>CPU time = 0h 0m 16s, Elapsed time = 0h 0m 15s, Peak memory usage = 4312.039MB</td>
 </tr>
 </table>
 <h1><a name="resource">Resource</a></h1>
@@ -146,15 +148,15 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 </tr>
 <tr>
 <td class="label"><b>I/O Buf </b></td>
-<td>283</td>
+<td>284</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspIBUF</td>
-<td>84</td>
+<td>86</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspOBUF</td>
-<td>160</td>
+<td>159</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspTBUF</td>
@@ -174,7 +176,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 </tr>
 <tr>
 <td class="label"><b>Register </b></td>
-<td>9238</td>
+<td>9451</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFFSE</td>
@@ -182,7 +184,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFFRE</td>
-<td>1348</td>
+<td>1561</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFFPE</td>
@@ -194,35 +196,35 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 </tr>
 <tr>
 <td class="label"><b>LUT </b></td>
-<td>11328</td>
+<td>11561</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspLUT2</td>
-<td>1308</td>
+<td>1326</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspLUT3</td>
-<td>3973</td>
+<td>4049</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspLUT4</td>
-<td>6047</td>
+<td>6186</td>
 </tr>
 <tr>
 <td class="label"><b>ALU </b></td>
-<td>474</td>
+<td>539</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspALU</td>
-<td>474</td>
+<td>539</td>
 </tr>
 <tr>
 <td class="label"><b>INV </b></td>
-<td>71</td>
+<td>79</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspINV</td>
-<td>71</td>
+<td>79</td>
 </tr>
 <tr>
 <td class="label"><b>IOLOGIC </b></td>
@@ -262,11 +264,11 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 </tr>
 <tr>
 <td class="label"><b>BSRAM </b></td>
-<td>149</td>
+<td>151</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspSDPB</td>
-<td>21</td>
+<td>23</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDPB</td>
@@ -306,12 +308,12 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 </tr>
 <tr>
 <td class="label">Logic</td>
-<td>11873(11399 LUT, 474 ALU) / 138240</td>
+<td>12179(11640 LUT, 539 ALU) / 138240</td>
 <td>9%</td>
 </tr>
 <tr>
 <td class="label">Register</td>
-<td>9238 / 139140</td>
+<td>9451 / 139140</td>
 <td>7%</td>
 </tr>
 <tr>
@@ -321,13 +323,13 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp--Register as FF</td>
-<td>9238 / 139140</td>
+<td>9451 / 139140</td>
 <td>7%</td>
 </tr>
 <tr>
 <td class="label">BSRAM</td>
-<td>149 / 340</td>
-<td>44%</td>
+<td>151 / 340</td>
+<td>45%</td>
 </tr>
 </table>
 <h1><a name="timing">Timing</a></h1>
@@ -456,7 +458,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>1</td>
 <td>HCLK</td>
 <td>100.000(MHz)</td>
-<td>89.097(MHz)</td>
+<td>88.884(MHz)</td>
 <td>12</td>
 <td>TOP</td>
 </tr>
@@ -504,8 +506,8 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>7</td>
 <td>Cortex_M1_instance/APB1PCLK_obuf/I</td>
 <td>100.000(MHz)</td>
-<td>376.364(MHz)</td>
-<td>3</td>
+<td>239.292(MHz)</td>
+<td>6</td>
 <td>TOP</td>
 </tr>
 <tr>
@@ -523,11 +525,11 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>-1.224</td>
+<td>-1.251</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>11.503</td>
+<td>11.530</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
@@ -539,7 +541,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 </tr>
 <tr>
 <td class="label">To</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_1_s1</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/state_reg_2_s0</td>
 </tr>
 <tr>
 <td class="label">Launch Clk</td>
@@ -645,7 +647,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>2.478</td>
 <td>tINS</td>
 <td>RR</td>
-<td>1</td>
+<td>3</td>
 <td>Cortex_M1_instance/APB1PSEL_obuf/O</td>
 </tr>
 <tr>
@@ -654,47 +656,47 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>slave_PRDATA_14_s15/I3</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s11/I1</td>
 </tr>
 <tr>
-<td>5.534</td>
-<td>0.231</td>
-<td>tINS</td>
-<td>RR</td>
-<td>1</td>
-<td>slave_PRDATA_14_s15/F</td>
-</tr>
-<tr>
-<td>5.864</td>
-<td>0.330</td>
-<td>tNET</td>
-<td>RR</td>
-<td>1</td>
-<td>slave_PRDATA_14_s8/I1</td>
-</tr>
-<tr>
-<td>6.318</td>
+<td>5.757</td>
 <td>0.454</td>
 <td>tINS</td>
 <td>RR</td>
-<td>5</td>
-<td>slave_PRDATA_14_s8/F</td>
+<td>1</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s11/F</td>
 </tr>
 <tr>
-<td>6.648</td>
+<td>6.087</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>slave_PRDATA_14_s6/I0</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s8/I0</td>
 </tr>
 <tr>
-<td>7.111</td>
+<td>6.550</td>
 <td>0.463</td>
 <td>tINS</td>
 <td>RR</td>
-<td>27</td>
-<td>slave_PRDATA_14_s6/F</td>
+<td>2</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s8/F</td>
+</tr>
+<tr>
+<td>6.880</td>
+<td>0.330</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s3/I3</td>
+</tr>
+<tr>
+<td>7.111</td>
+<td>0.231</td>
+<td>tINS</td>
+<td>RR</td>
+<td>42</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s3/F</td>
 </tr>
 <tr>
 <td>7.441</td>
@@ -702,15 +704,15 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>slave_PRDATA_1_s1/I0</td>
+<td>gwct_inst/apb_master_inst/n119_s8/I0</td>
 </tr>
 <tr>
 <td>7.904</td>
 <td>0.463</td>
 <td>tINS</td>
 <td>RR</td>
-<td>1</td>
-<td>slave_PRDATA_1_s1/F</td>
+<td>6</td>
+<td>gwct_inst/apb_master_inst/n119_s8/F</td>
 </tr>
 <tr>
 <td>8.234</td>
@@ -718,71 +720,71 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>slave_PRDATA_1_s0/I1</td>
+<td>APB1PREADY_s1/I0</td>
 </tr>
 <tr>
-<td>8.688</td>
-<td>0.454</td>
+<td>8.697</td>
+<td>0.463</td>
 <td>tINS</td>
 <td>RR</td>
-<td>2</td>
-<td>slave_PRDATA_1_s0/F</td>
+<td>1</td>
+<td>APB1PREADY_s1/F</td>
 </tr>
 <tr>
-<td>9.018</td>
+<td>9.027</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/APB1PRDATA_1_ibuf/I</td>
+<td>Cortex_M1_instance/APB1PREADY_ibuf/I</td>
 </tr>
 <tr>
-<td>9.605</td>
+<td>9.614</td>
 <td>0.587</td>
 <td>tINS</td>
 <td>RR</td>
-<td>1</td>
-<td>Cortex_M1_instance/APB1PRDATA_1_ibuf/O</td>
+<td>4</td>
+<td>Cortex_M1_instance/APB1PREADY_ibuf/O</td>
 </tr>
 <tr>
-<td>9.935</td>
+<td>9.944</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n193_s1/I1</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_31_s4/I0</td>
 </tr>
 <tr>
-<td>10.389</td>
-<td>0.454</td>
+<td>10.407</td>
+<td>0.463</td>
 <td>tINS</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n193_s1/F</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_31_s4/F</td>
 </tr>
 <tr>
-<td>10.719</td>
+<td>10.737</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n193_s0/I1</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/next_state_2_s11/I0</td>
 </tr>
 <tr>
-<td>11.173</td>
-<td>0.454</td>
+<td>11.200</td>
+<td>0.463</td>
 <td>tINS</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n193_s0/F</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/next_state_2_s11/F</td>
 </tr>
 <tr>
-<td>11.503</td>
+<td>11.530</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_1_s1/D</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/state_reg_2_s0/D</td>
 </tr>
 </table>
 <b>Data Required Path:</b>
@@ -825,7 +827,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_1_s1/CLK</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/state_reg_2_s0/CLK</td>
 </tr>
 <tr>
 <td>10.279</td>
@@ -833,7 +835,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>tSu</td>
 <td> </td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_1_s1</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/state_reg_2_s0</td>
 </tr>
 </table>
 <b>Path Statistics:</b>
@@ -853,7 +855,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <tr>
 <td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.330, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 6.907, 61.817%; route: 3.960, 35.444%; tC2Q: 0.306, 2.739%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 6.934, 61.910%; route: 3.960, 35.358%; tC2Q: 0.306, 2.732%</td></tr>
 <tr>
 <td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.330, 100.000%</td></tr>
 </table>
@@ -863,11 +865,11 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>-1.224</td>
+<td>-1.185</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>11.503</td>
+<td>11.464</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
@@ -879,7 +881,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 </tr>
 <tr>
 <td class="label">To</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_2_s1</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/state_reg_0_s0</td>
 </tr>
 <tr>
 <td class="label">Launch Clk</td>
@@ -985,7 +987,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>2.478</td>
 <td>tINS</td>
 <td>RR</td>
-<td>1</td>
+<td>3</td>
 <td>Cortex_M1_instance/APB1PSEL_obuf/O</td>
 </tr>
 <tr>
@@ -994,47 +996,47 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>slave_PRDATA_14_s15/I3</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s11/I1</td>
 </tr>
 <tr>
-<td>5.534</td>
-<td>0.231</td>
-<td>tINS</td>
-<td>RR</td>
-<td>1</td>
-<td>slave_PRDATA_14_s15/F</td>
-</tr>
-<tr>
-<td>5.864</td>
-<td>0.330</td>
-<td>tNET</td>
-<td>RR</td>
-<td>1</td>
-<td>slave_PRDATA_14_s8/I1</td>
-</tr>
-<tr>
-<td>6.318</td>
+<td>5.757</td>
 <td>0.454</td>
 <td>tINS</td>
 <td>RR</td>
-<td>5</td>
-<td>slave_PRDATA_14_s8/F</td>
+<td>1</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s11/F</td>
 </tr>
 <tr>
-<td>6.648</td>
+<td>6.087</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>slave_PRDATA_14_s6/I0</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s8/I0</td>
 </tr>
 <tr>
-<td>7.111</td>
+<td>6.550</td>
 <td>0.463</td>
 <td>tINS</td>
 <td>RR</td>
-<td>27</td>
-<td>slave_PRDATA_14_s6/F</td>
+<td>2</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s8/F</td>
+</tr>
+<tr>
+<td>6.880</td>
+<td>0.330</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s3/I3</td>
+</tr>
+<tr>
+<td>7.111</td>
+<td>0.231</td>
+<td>tINS</td>
+<td>RR</td>
+<td>42</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s3/F</td>
 </tr>
 <tr>
 <td>7.441</td>
@@ -1042,15 +1044,15 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>slave_PRDATA_2_s1/I0</td>
+<td>gwct_inst/apb_master_inst/n119_s8/I0</td>
 </tr>
 <tr>
 <td>7.904</td>
 <td>0.463</td>
 <td>tINS</td>
 <td>RR</td>
-<td>1</td>
-<td>slave_PRDATA_2_s1/F</td>
+<td>6</td>
+<td>gwct_inst/apb_master_inst/n119_s8/F</td>
 </tr>
 <tr>
 <td>8.234</td>
@@ -1058,71 +1060,71 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>slave_PRDATA_2_s0/I1</td>
+<td>APB1PREADY_s1/I0</td>
 </tr>
 <tr>
-<td>8.688</td>
-<td>0.454</td>
+<td>8.697</td>
+<td>0.463</td>
 <td>tINS</td>
 <td>RR</td>
-<td>2</td>
-<td>slave_PRDATA_2_s0/F</td>
+<td>1</td>
+<td>APB1PREADY_s1/F</td>
 </tr>
 <tr>
-<td>9.018</td>
+<td>9.027</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/APB1PRDATA_2_ibuf/I</td>
+<td>Cortex_M1_instance/APB1PREADY_ibuf/I</td>
 </tr>
 <tr>
-<td>9.605</td>
+<td>9.614</td>
 <td>0.587</td>
 <td>tINS</td>
 <td>RR</td>
-<td>1</td>
-<td>Cortex_M1_instance/APB1PRDATA_2_ibuf/O</td>
+<td>4</td>
+<td>Cortex_M1_instance/APB1PREADY_ibuf/O</td>
 </tr>
 <tr>
-<td>9.935</td>
+<td>9.944</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n192_s1/I1</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/next_state_0_s15/I1</td>
 </tr>
 <tr>
-<td>10.389</td>
+<td>10.398</td>
 <td>0.454</td>
 <td>tINS</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n192_s1/F</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/next_state_0_s15/F</td>
 </tr>
 <tr>
-<td>10.719</td>
+<td>10.728</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n192_s0/I1</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/next_state_0_s13/I2</td>
 </tr>
 <tr>
-<td>11.173</td>
-<td>0.454</td>
+<td>11.134</td>
+<td>0.406</td>
 <td>tINS</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n192_s0/F</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/next_state_0_s13/F</td>
 </tr>
 <tr>
-<td>11.503</td>
+<td>11.464</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_2_s1/D</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/state_reg_0_s0/D</td>
 </tr>
 </table>
 <b>Data Required Path:</b>
@@ -1165,7 +1167,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_2_s1/CLK</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/state_reg_0_s0/CLK</td>
 </tr>
 <tr>
 <td>10.279</td>
@@ -1173,7 +1175,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>tSu</td>
 <td> </td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_2_s1</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/state_reg_0_s0</td>
 </tr>
 </table>
 <b>Path Statistics:</b>
@@ -1193,7 +1195,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <tr>
 <td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.330, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 6.907, 61.817%; route: 3.960, 35.444%; tC2Q: 0.306, 2.739%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 6.868, 61.684%; route: 3.960, 35.568%; tC2Q: 0.306, 2.748%</td></tr>
 <tr>
 <td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.330, 100.000%</td></tr>
 </table>
@@ -1203,11 +1205,11 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>-1.224</td>
+<td>-1.019</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>11.503</td>
+<td>11.298</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
@@ -1219,7 +1221,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 </tr>
 <tr>
 <td class="label">To</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_4_s1</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/state_reg_1_s0</td>
 </tr>
 <tr>
 <td class="label">Launch Clk</td>
@@ -1325,7 +1327,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>2.478</td>
 <td>tINS</td>
 <td>RR</td>
-<td>1</td>
+<td>3</td>
 <td>Cortex_M1_instance/APB1PSEL_obuf/O</td>
 </tr>
 <tr>
@@ -1334,47 +1336,47 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>slave_PRDATA_14_s15/I3</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s11/I1</td>
 </tr>
 <tr>
-<td>5.534</td>
-<td>0.231</td>
-<td>tINS</td>
-<td>RR</td>
-<td>1</td>
-<td>slave_PRDATA_14_s15/F</td>
-</tr>
-<tr>
-<td>5.864</td>
-<td>0.330</td>
-<td>tNET</td>
-<td>RR</td>
-<td>1</td>
-<td>slave_PRDATA_14_s8/I1</td>
-</tr>
-<tr>
-<td>6.318</td>
+<td>5.757</td>
 <td>0.454</td>
 <td>tINS</td>
 <td>RR</td>
-<td>5</td>
-<td>slave_PRDATA_14_s8/F</td>
+<td>1</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s11/F</td>
 </tr>
 <tr>
-<td>6.648</td>
+<td>6.087</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>slave_PRDATA_14_s6/I0</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s8/I0</td>
 </tr>
 <tr>
-<td>7.111</td>
+<td>6.550</td>
 <td>0.463</td>
 <td>tINS</td>
 <td>RR</td>
-<td>27</td>
-<td>slave_PRDATA_14_s6/F</td>
+<td>2</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s8/F</td>
+</tr>
+<tr>
+<td>6.880</td>
+<td>0.330</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s3/I3</td>
+</tr>
+<tr>
+<td>7.111</td>
+<td>0.231</td>
+<td>tINS</td>
+<td>RR</td>
+<td>42</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s3/F</td>
 </tr>
 <tr>
 <td>7.441</td>
@@ -1382,15 +1384,15 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>slave_PRDATA_4_s2/I0</td>
+<td>gwct_inst/apb_master_inst/n119_s8/I0</td>
 </tr>
 <tr>
 <td>7.904</td>
 <td>0.463</td>
 <td>tINS</td>
 <td>RR</td>
-<td>1</td>
-<td>slave_PRDATA_4_s2/F</td>
+<td>6</td>
+<td>gwct_inst/apb_master_inst/n119_s8/F</td>
 </tr>
 <tr>
 <td>8.234</td>
@@ -1398,71 +1400,71 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>slave_PRDATA_4_s0/I1</td>
+<td>APB1PREADY_s1/I0</td>
 </tr>
 <tr>
-<td>8.688</td>
-<td>0.454</td>
+<td>8.697</td>
+<td>0.463</td>
 <td>tINS</td>
 <td>RR</td>
-<td>2</td>
-<td>slave_PRDATA_4_s0/F</td>
+<td>1</td>
+<td>APB1PREADY_s1/F</td>
 </tr>
 <tr>
-<td>9.018</td>
+<td>9.027</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/APB1PRDATA_4_ibuf/I</td>
+<td>Cortex_M1_instance/APB1PREADY_ibuf/I</td>
 </tr>
 <tr>
-<td>9.605</td>
+<td>9.614</td>
 <td>0.587</td>
 <td>tINS</td>
 <td>RR</td>
-<td>1</td>
-<td>Cortex_M1_instance/APB1PRDATA_4_ibuf/O</td>
+<td>4</td>
+<td>Cortex_M1_instance/APB1PREADY_ibuf/O</td>
 </tr>
 <tr>
-<td>9.935</td>
+<td>9.944</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n190_s1/I1</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/next_state_1_s15/I0</td>
 </tr>
 <tr>
-<td>10.389</td>
-<td>0.454</td>
+<td>10.407</td>
+<td>0.463</td>
 <td>tINS</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n190_s1/F</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/next_state_1_s15/F</td>
 </tr>
 <tr>
-<td>10.719</td>
+<td>10.737</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n190_s0/I1</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/next_state_1_s12/I3</td>
 </tr>
 <tr>
-<td>11.173</td>
-<td>0.454</td>
+<td>10.968</td>
+<td>0.231</td>
 <td>tINS</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n190_s0/F</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/next_state_1_s12/F</td>
 </tr>
 <tr>
-<td>11.503</td>
+<td>11.298</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_4_s1/D</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/state_reg_1_s0/D</td>
 </tr>
 </table>
 <b>Data Required Path:</b>
@@ -1505,7 +1507,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_4_s1/CLK</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/state_reg_1_s0/CLK</td>
 </tr>
 <tr>
 <td>10.279</td>
@@ -1513,7 +1515,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>tSu</td>
 <td> </td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_4_s1</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/state_reg_1_s0</td>
 </tr>
 </table>
 <b>Path Statistics:</b>
@@ -1533,7 +1535,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <tr>
 <td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.330, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 6.907, 61.817%; route: 3.960, 35.444%; tC2Q: 0.306, 2.739%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 6.702, 61.104%; route: 3.960, 36.106%; tC2Q: 0.306, 2.790%</td></tr>
 <tr>
 <td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.330, 100.000%</td></tr>
 </table>
@@ -1543,11 +1545,11 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>-1.224</td>
+<td>-1.001</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>11.503</td>
+<td>11.280</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
@@ -1559,7 +1561,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 </tr>
 <tr>
 <td class="label">To</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_7_s1</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_14_s1</td>
 </tr>
 <tr>
 <td class="label">Launch Clk</td>
@@ -1665,7 +1667,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>2.478</td>
 <td>tINS</td>
 <td>RR</td>
-<td>1</td>
+<td>3</td>
 <td>Cortex_M1_instance/APB1PSEL_obuf/O</td>
 </tr>
 <tr>
@@ -1674,47 +1676,47 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>slave_PRDATA_14_s15/I3</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s11/I1</td>
 </tr>
 <tr>
-<td>5.534</td>
-<td>0.231</td>
-<td>tINS</td>
-<td>RR</td>
-<td>1</td>
-<td>slave_PRDATA_14_s15/F</td>
-</tr>
-<tr>
-<td>5.864</td>
-<td>0.330</td>
-<td>tNET</td>
-<td>RR</td>
-<td>1</td>
-<td>slave_PRDATA_14_s8/I1</td>
-</tr>
-<tr>
-<td>6.318</td>
+<td>5.757</td>
 <td>0.454</td>
 <td>tINS</td>
 <td>RR</td>
-<td>5</td>
-<td>slave_PRDATA_14_s8/F</td>
+<td>1</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s11/F</td>
 </tr>
 <tr>
-<td>6.648</td>
+<td>6.087</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>slave_PRDATA_14_s6/I0</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s8/I0</td>
 </tr>
 <tr>
-<td>7.111</td>
+<td>6.550</td>
 <td>0.463</td>
 <td>tINS</td>
 <td>RR</td>
-<td>27</td>
-<td>slave_PRDATA_14_s6/F</td>
+<td>2</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s8/F</td>
+</tr>
+<tr>
+<td>6.880</td>
+<td>0.330</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s3/I3</td>
+</tr>
+<tr>
+<td>7.111</td>
+<td>0.231</td>
+<td>tINS</td>
+<td>RR</td>
+<td>42</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s3/F</td>
 </tr>
 <tr>
 <td>7.441</td>
@@ -1722,87 +1724,87 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>slave_PRDATA_7_s1/I0</td>
+<td>slave_PRDATA_14_s1/I3</td>
 </tr>
 <tr>
-<td>7.904</td>
+<td>7.672</td>
+<td>0.231</td>
+<td>tINS</td>
+<td>RR</td>
+<td>1</td>
+<td>slave_PRDATA_14_s1/F</td>
+</tr>
+<tr>
+<td>8.002</td>
+<td>0.330</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>slave_PRDATA_14_s0/I0</td>
+</tr>
+<tr>
+<td>8.465</td>
 <td>0.463</td>
 <td>tINS</td>
 <td>RR</td>
-<td>1</td>
-<td>slave_PRDATA_7_s1/F</td>
-</tr>
-<tr>
-<td>8.234</td>
-<td>0.330</td>
-<td>tNET</td>
-<td>RR</td>
-<td>1</td>
-<td>slave_PRDATA_7_s0/I1</td>
-</tr>
-<tr>
-<td>8.688</td>
-<td>0.454</td>
-<td>tINS</td>
-<td>RR</td>
 <td>2</td>
-<td>slave_PRDATA_7_s0/F</td>
+<td>slave_PRDATA_14_s0/F</td>
 </tr>
 <tr>
-<td>9.018</td>
+<td>8.795</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/APB1PRDATA_7_ibuf/I</td>
+<td>Cortex_M1_instance/APB1PRDATA_14_ibuf/I</td>
 </tr>
 <tr>
-<td>9.605</td>
+<td>9.382</td>
 <td>0.587</td>
 <td>tINS</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/APB1PRDATA_7_ibuf/O</td>
+<td>Cortex_M1_instance/APB1PRDATA_14_ibuf/O</td>
 </tr>
 <tr>
-<td>9.935</td>
+<td>9.712</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n187_s1/I1</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n180_s1/I1</td>
 </tr>
 <tr>
-<td>10.389</td>
+<td>10.166</td>
 <td>0.454</td>
 <td>tINS</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n187_s1/F</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n180_s1/F</td>
 </tr>
 <tr>
-<td>10.719</td>
+<td>10.496</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n187_s0/I1</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n180_s0/I1</td>
 </tr>
 <tr>
-<td>11.173</td>
+<td>10.950</td>
 <td>0.454</td>
 <td>tINS</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n187_s0/F</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n180_s0/F</td>
 </tr>
 <tr>
-<td>11.503</td>
+<td>11.280</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_7_s1/D</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_14_s1/D</td>
 </tr>
 </table>
 <b>Data Required Path:</b>
@@ -1845,7 +1847,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_7_s1/CLK</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_14_s1/CLK</td>
 </tr>
 <tr>
 <td>10.279</td>
@@ -1853,7 +1855,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>tSu</td>
 <td> </td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_7_s1</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_14_s1</td>
 </tr>
 </table>
 <b>Path Statistics:</b>
@@ -1873,7 +1875,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <tr>
 <td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.330, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 6.907, 61.817%; route: 3.960, 35.444%; tC2Q: 0.306, 2.739%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 6.684, 61.040%; route: 3.960, 36.165%; tC2Q: 0.306, 2.795%</td></tr>
 <tr>
 <td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.330, 100.000%</td></tr>
 </table>
@@ -1883,11 +1885,11 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>-1.224</td>
+<td>-1.001</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>11.503</td>
+<td>11.280</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
@@ -1899,7 +1901,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 </tr>
 <tr>
 <td class="label">To</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_11_s1</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_17_s1</td>
 </tr>
 <tr>
 <td class="label">Launch Clk</td>
@@ -2005,7 +2007,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>2.478</td>
 <td>tINS</td>
 <td>RR</td>
-<td>1</td>
+<td>3</td>
 <td>Cortex_M1_instance/APB1PSEL_obuf/O</td>
 </tr>
 <tr>
@@ -2014,47 +2016,47 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>slave_PRDATA_14_s15/I3</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s11/I1</td>
 </tr>
 <tr>
-<td>5.534</td>
-<td>0.231</td>
-<td>tINS</td>
-<td>RR</td>
-<td>1</td>
-<td>slave_PRDATA_14_s15/F</td>
-</tr>
-<tr>
-<td>5.864</td>
-<td>0.330</td>
-<td>tNET</td>
-<td>RR</td>
-<td>1</td>
-<td>slave_PRDATA_14_s8/I1</td>
-</tr>
-<tr>
-<td>6.318</td>
+<td>5.757</td>
 <td>0.454</td>
 <td>tINS</td>
 <td>RR</td>
-<td>5</td>
-<td>slave_PRDATA_14_s8/F</td>
+<td>1</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s11/F</td>
 </tr>
 <tr>
-<td>6.648</td>
+<td>6.087</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>slave_PRDATA_14_s6/I0</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s8/I0</td>
 </tr>
 <tr>
-<td>7.111</td>
+<td>6.550</td>
 <td>0.463</td>
 <td>tINS</td>
 <td>RR</td>
-<td>27</td>
-<td>slave_PRDATA_14_s6/F</td>
+<td>2</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s8/F</td>
+</tr>
+<tr>
+<td>6.880</td>
+<td>0.330</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s3/I3</td>
+</tr>
+<tr>
+<td>7.111</td>
+<td>0.231</td>
+<td>tINS</td>
+<td>RR</td>
+<td>42</td>
+<td>apb_memmap_inst/sysinfo_inst/u_regs/wr_req_s3/F</td>
 </tr>
 <tr>
 <td>7.441</td>
@@ -2062,87 +2064,87 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>slave_PRDATA_11_s2/I0</td>
+<td>slave_PRDATA_17_s1/I3</td>
 </tr>
 <tr>
-<td>7.904</td>
+<td>7.672</td>
+<td>0.231</td>
+<td>tINS</td>
+<td>RR</td>
+<td>1</td>
+<td>slave_PRDATA_17_s1/F</td>
+</tr>
+<tr>
+<td>8.002</td>
+<td>0.330</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>slave_PRDATA_17_s0/I0</td>
+</tr>
+<tr>
+<td>8.465</td>
 <td>0.463</td>
 <td>tINS</td>
 <td>RR</td>
-<td>1</td>
-<td>slave_PRDATA_11_s2/F</td>
-</tr>
-<tr>
-<td>8.234</td>
-<td>0.330</td>
-<td>tNET</td>
-<td>RR</td>
-<td>1</td>
-<td>slave_PRDATA_11_s0/I1</td>
-</tr>
-<tr>
-<td>8.688</td>
-<td>0.454</td>
-<td>tINS</td>
-<td>RR</td>
 <td>2</td>
-<td>slave_PRDATA_11_s0/F</td>
+<td>slave_PRDATA_17_s0/F</td>
 </tr>
 <tr>
-<td>9.018</td>
+<td>8.795</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/APB1PRDATA_11_ibuf/I</td>
+<td>Cortex_M1_instance/APB1PRDATA_17_ibuf/I</td>
 </tr>
 <tr>
-<td>9.605</td>
+<td>9.382</td>
 <td>0.587</td>
 <td>tINS</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/APB1PRDATA_11_ibuf/O</td>
+<td>Cortex_M1_instance/APB1PRDATA_17_ibuf/O</td>
 </tr>
 <tr>
-<td>9.935</td>
+<td>9.712</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n183_s1/I1</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n177_s1/I1</td>
 </tr>
 <tr>
-<td>10.389</td>
+<td>10.166</td>
 <td>0.454</td>
 <td>tINS</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n183_s1/F</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n177_s1/F</td>
 </tr>
 <tr>
-<td>10.719</td>
+<td>10.496</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n183_s0/I1</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n177_s0/I1</td>
 </tr>
 <tr>
-<td>11.173</td>
+<td>10.950</td>
 <td>0.454</td>
 <td>tINS</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n183_s0/F</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/n177_s0/F</td>
 </tr>
 <tr>
-<td>11.503</td>
+<td>11.280</td>
 <td>0.330</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_11_s1/D</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_17_s1/D</td>
 </tr>
 </table>
 <b>Data Required Path:</b>
@@ -2185,7 +2187,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_11_s1/CLK</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_17_s1/CLK</td>
 </tr>
 <tr>
 <td>10.279</td>
@@ -2193,7 +2195,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>tSu</td>
 <td> </td>
 <td>1</td>
-<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_11_s1</td>
+<td>Cortex_M1_instance/u_GowinCM1AhbExtWrapper/u_GowinCM1AhbExt/u_p_sse050_interconnect_f0_ahb_to_apb_e/rwdata_reg_17_s1</td>
 </tr>
 </table>
 <b>Path Statistics:</b>
@@ -2213,7 +2215,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <tr>
 <td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.330, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 6.907, 61.817%; route: 3.960, 35.444%; tC2Q: 0.306, 2.739%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 6.684, 61.040%; route: 3.960, 36.165%; tC2Q: 0.306, 2.795%</td></tr>
 <tr>
 <td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.330, 100.000%</td></tr>
 </table>

@@ -6,19 +6,19 @@
 //Part Number: GW5AST-LV138FPG676AC2/I1
 //Device: GW5AST-138
 //Device Version: B
-//Created Time: Mon Apr  6 20:16:39 2026
+//Created Time: Tue Apr  7 18:20:45 2026
 
-module Gowin_PLL_ffc_MOD (lock, clkout0, clkout1, clkin, reset, icpsel, lpfres, lpfcap);
+module Gowin_PLL_ffc_MOD (lock, clkout0, clkin, reset, icpsel, lpfres, lpfcap);
 
 output lock;
 output clkout0;
-output clkout1;
 input clkin;
 input reset;
 input [5:0] icpsel;
 input [2:0] lpfres;
 input [1:0] lpfcap;
 
+wire clkout1;
 wire clkout2;
 wire clkout3;
 wire clkout4;
@@ -85,8 +85,8 @@ PLL PLL_inst (
 defparam PLL_inst.FCLKIN = "50";
 defparam PLL_inst.IDIV_SEL = 1;
 defparam PLL_inst.FBDIV_SEL = 1;
-defparam PLL_inst.ODIV0_SEL = 80;
-defparam PLL_inst.ODIV1_SEL = 4;
+defparam PLL_inst.ODIV0_SEL = 8;
+defparam PLL_inst.ODIV1_SEL = 8;
 defparam PLL_inst.ODIV2_SEL = 8;
 defparam PLL_inst.ODIV3_SEL = 8;
 defparam PLL_inst.ODIV4_SEL = 8;
@@ -96,7 +96,7 @@ defparam PLL_inst.MDIV_SEL = 16;
 defparam PLL_inst.MDIV_FRAC_SEL = 0;
 defparam PLL_inst.ODIV0_FRAC_SEL = 0;
 defparam PLL_inst.CLKOUT0_EN = "TRUE";
-defparam PLL_inst.CLKOUT1_EN = "TRUE";
+defparam PLL_inst.CLKOUT1_EN = "FALSE";
 defparam PLL_inst.CLKOUT2_EN = "FALSE";
 defparam PLL_inst.CLKOUT3_EN = "FALSE";
 defparam PLL_inst.CLKOUT4_EN = "FALSE";

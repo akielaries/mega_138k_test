@@ -2,15 +2,16 @@ module Gowin_PLL_ffc(
     clkin,
     init_clk,
     clkout0,
-    clkout1
+    lock,
+    reset
 );
 
 
 input clkin;
 input init_clk;
 output clkout0;
-output clkout1;
-wire lock;
+output lock;
+input reset;
 wire [5:0] icpsel;
 wire [2:0] lpfres;
 wire pll_lock;
@@ -18,7 +19,6 @@ wire pll_rst;
 
 
     Gowin_PLL_ffc_MOD u_pll(
-        .clkout1(clkout1),
         .clkout0(clkout0),
         .lock(pll_lock),
         .clkin(clkin),
@@ -31,7 +31,7 @@ wire pll_rst;
 
     PLL_INIT u_pll_init(
         .CLKIN(init_clk),
-        .I_RST(1'b0),
+        .I_RST(reset),
         .O_RST(pll_rst),
         .PLLLOCK(pll_lock),
         .O_LOCK(lock),

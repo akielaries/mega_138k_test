@@ -50,7 +50,15 @@
    "Type" : "verilog"
   },
   {
+   "Path" : "/home/akiel/trunk/pub/mega_138k_test/src/cheby_dpssram.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "/home/akiel/trunk/pub/mega_138k_test/src/multiflex_tx.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "/home/akiel/trunk/pub/mega_138k_test/src/multiflex_rx.v",
    "Type" : "verilog"
   },
   {
