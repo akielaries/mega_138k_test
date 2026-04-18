@@ -62,13 +62,26 @@ module multiflex_tx #(
                       (wr_ptr[FBITS-1:0] == rd_ptr[FBITS-1:0]);
   wire fifo_empty_w = (wr_ptr == rd_ptr);
 
-  assign tx_full  = fifo_full_w;
+  // fifo_full_r: registered version of fifo_full_w.
+  // breaks the rd_ptr -> fifo_full_w -> FIFO write CE combinational chain
+  // (chain A: 128 RAMREG FFs all seeing fifo_full_w on their CE).
+  // conservative: the FIFO appears full for one extra cycle after a read;
+  // harmless because the TX FIFO is filled by the drain SM at pclk rate,
+  // never back-to-back at fabric-clk rate, so the 1-cycle pessimism is
+  // invisible to the caller.
+  reg fifo_full_r;
+  always @(posedge clk) begin
+    if (!rstn || !cfg_enable) fifo_full_r <= 1'b0;
+    else                      fifo_full_r <= fifo_full_w;
+  end
+
+  assign tx_full  = fifo_full_r;
   assign tx_empty = fifo_empty_w;
 
   always @(posedge clk) begin
     if (!rstn || !cfg_enable) begin
       wr_ptr <= 0;
-    end else if (tx_wr && !fifo_full_w) begin
+    end else if (tx_wr && !fifo_full_r) begin
       fifo[wr_ptr[FBITS-1:0]] <= tx_byte;
       wr_ptr <= wr_ptr + 1;
     end
@@ -100,13 +113,30 @@ module multiflex_tx #(
   // trailing falling edge before the clock gates off
   wire clk_run = tx_busy_w || drain;
 
-  wire fall_tick = (div_cnt == 0) && (phase == 1'b0) && cfg_enable && clk_run;
+  // clk_run_r: registered version used only for the divider reset condition.
+  // breaks the rd_ptr->fifo_empty_w->clk_run->RESET timing chain (chain B).
+  // the divider resets one cycle late when going idle; harmless because the
+  // drain state already extends the clock by a full cycle after the last byte.
+  reg clk_run_r;
+  always @(posedge clk) begin
+    if (!rstn || !cfg_enable) clk_run_r <= 1'b0;
+    else                      clk_run_r <= clk_run;
+  end
+
+  // fall_tick uses clk_run_r (registered) instead of clk_run.
+  // breaks the rd_ptr -> fifo_empty_w -> clk_run -> fall_tick -> CE/D chains
+  // (paths to mfx_sync_r CE and mfx_tx_r D).
+  // effect: first fall_tick after startup is delayed by 1 fabric cycle (harmless;
+  // divider is still in reset on cycle N when clk_run first goes high).
+  // effect at drain end: one extra idle fall_tick fires after drain clears (harmless;
+  // hits the !active branch which drives zeros and is a no-op when fifo is empty).
+  wire fall_tick = (div_cnt == 0) && (phase == 1'b0) && cfg_enable && clk_run_r;
 
   // pre-pipeline internal registers: state machine and divider write these;
   // also driven out as fabric-side copies so the placer can put them near
   // the RX module rather than near the output pads
   reg                  mfx_clk_r;
-  reg [NUM_LANES-1:0]  mfx_tx_r;
+  reg [7:0]            mfx_tx_r; // always 8 bits; upper (8-NUM_LANES) bits unused
   reg                  mfx_sync_r;
   reg                  mfx_clk_fabric_r;
   reg                  mfx_sync_fabric_r;
@@ -122,7 +152,7 @@ module multiflex_tx #(
       mfx_sync_fabric <= 1'b0;
     end else begin
       mfx_clk_fabric  <= mfx_clk_fabric_r;
-      mfx_tx_fabric   <= mfx_tx_r;
+      mfx_tx_fabric   <= mfx_tx_r[NUM_LANES-1:0];
       mfx_sync_fabric <= mfx_sync_fabric_r;
     end
   end
@@ -134,12 +164,12 @@ module multiflex_tx #(
   // path from the APB/reset-sync region to these pad-adjacent FFs.
   always @(posedge clk) begin
     mfx_clk  <= mfx_clk_r;
-    mfx_tx   <= mfx_tx_r;
+    mfx_tx   <= mfx_tx_r[NUM_LANES-1:0];
     mfx_sync <= mfx_sync_r;
   end
 
   always @(posedge clk) begin
-    if (!rstn || !cfg_enable || !clk_run) begin
+    if (!rstn || !cfg_enable || !clk_run_r) begin
       div_cnt          <= 0;
       phase            <= 0;
       mfx_clk_r        <= 0;
@@ -163,6 +193,15 @@ module multiflex_tx #(
                      (cfg_lanes > NUM_LANES) ? NUM_LANES[4:0] :
                      cfg_lanes;
 
+  // lanes_r: registered; removes clamping comparators from the mfx_tx_r D
+  // and sr-shift paths so only ~2 LUT levels remain on those critical paths.
+  // safe: cfg_lanes is stable during transfers.
+  reg [4:0] lanes_r;
+  always @(posedge clk) begin
+    if (!rstn || !cfg_enable) lanes_r <= 5'd1;
+    else                      lanes_r <= lanes;
+  end
+
   // -------------------------------------------------------------------------
   // TX state machine
   // -------------------------------------------------------------------------
@@ -183,8 +222,6 @@ module multiflex_tx #(
   assign tx_busy = active || !fifo_empty_w || drain;
 
   wire [7:0] fifo_head = fifo[rd_ptr[FBITS-1:0]];
-
-  integer k;
 
   always @(posedge clk) begin
     if (!rstn || !cfg_enable) begin
@@ -211,20 +248,65 @@ module multiflex_tx #(
           rd_ptr <= rd_ptr + 1;
         end
       end else begin
-        // SEND: drive current symbol from sr
+        // SEND: drive current symbol from sr onto active lanes.
+        // case on lanes_r (registered) with constant sr[] indices gives
+        // ~2 LUT levels on the mfx_tx_r D path instead of ~7.
+        // lane[lanes_r-1] = MSB (sr[7]), lane[0] = LSB of this symbol.
+        // lower lanes are zero-padded when rem < lanes_r (partial symbol).
+        // inactive lanes (k >= lanes_r) are zeroed by the default assignment
+        // below; the active-lane case arms only write the lanes they own.
         mfx_sync_r        <= 1;
         mfx_sync_fabric_r <= 1;
-        for (k = 0; k < NUM_LANES; k = k + 1) begin
-          // lane k gets sr[7-(lanes-1-k)] when that bit position is valid
-          // (lanes-1-k) is the offset from the top: 0 for the MSB lane
-          if ((k < lanes) && ((lanes - 1 - k) < rem)) begin
-            mfx_tx_r[k] <= sr[7 - (lanes - 1 - k)];
-          end else begin
-            mfx_tx_r[k] <= 1'b0;
+        mfx_tx_r          <= 8'b0;
+        case (lanes_r[2:0])
+          3'd1: begin
+            mfx_tx_r[0] <= sr[7];
           end
-        end
+          3'd2: begin
+            mfx_tx_r[1] <= sr[7];
+            mfx_tx_r[0] <= (rem >= 4'd2) ? sr[6] : 1'b0;
+          end
+          3'd3: begin
+            mfx_tx_r[2] <= sr[7];
+            mfx_tx_r[1] <= (rem >= 4'd2) ? sr[6] : 1'b0;
+            mfx_tx_r[0] <= (rem >= 4'd3) ? sr[5] : 1'b0;
+          end
+          3'd4: begin
+            mfx_tx_r[3] <= sr[7];
+            mfx_tx_r[2] <= (rem >= 4'd2) ? sr[6] : 1'b0;
+            mfx_tx_r[1] <= (rem >= 4'd3) ? sr[5] : 1'b0;
+            mfx_tx_r[0] <= (rem >= 4'd4) ? sr[4] : 1'b0;
+          end
+          3'd5: begin
+            mfx_tx_r[4] <= sr[7];
+            mfx_tx_r[3] <= (rem >= 4'd2) ? sr[6] : 1'b0;
+            mfx_tx_r[2] <= (rem >= 4'd3) ? sr[5] : 1'b0;
+            mfx_tx_r[1] <= (rem >= 4'd4) ? sr[4] : 1'b0;
+            mfx_tx_r[0] <= (rem >= 4'd5) ? sr[3] : 1'b0;
+          end
+          3'd6: begin
+            mfx_tx_r[5] <= sr[7];
+            mfx_tx_r[4] <= (rem >= 4'd2) ? sr[6] : 1'b0;
+            mfx_tx_r[3] <= (rem >= 4'd3) ? sr[5] : 1'b0;
+            mfx_tx_r[2] <= (rem >= 4'd4) ? sr[4] : 1'b0;
+            mfx_tx_r[1] <= (rem >= 4'd5) ? sr[3] : 1'b0;
+            mfx_tx_r[0] <= (rem >= 4'd6) ? sr[2] : 1'b0;
+          end
+          3'd7: begin
+            mfx_tx_r[6] <= sr[7];
+            mfx_tx_r[5] <= (rem >= 4'd2) ? sr[6] : 1'b0;
+            mfx_tx_r[4] <= (rem >= 4'd3) ? sr[5] : 1'b0;
+            mfx_tx_r[3] <= (rem >= 4'd4) ? sr[4] : 1'b0;
+            mfx_tx_r[2] <= (rem >= 4'd5) ? sr[3] : 1'b0;
+            mfx_tx_r[1] <= (rem >= 4'd6) ? sr[2] : 1'b0;
+            mfx_tx_r[0] <= (rem >= 4'd7) ? sr[1] : 1'b0;
+          end
+          default: begin
+            mfx_tx_r[0] <= sr[7];
+          end
+        endcase
 
-        if (rem <= lanes) begin
+        if (rem <= {1'b0, lanes_r[3:0]}) begin
           // last symbol of this byte
           if (!fifo_empty_w) begin
             // back-to-back: load next byte; first symbol on next fall_tick
@@ -242,8 +324,18 @@ module multiflex_tx #(
             drain  <= 1;
           end
         end else begin
-          sr  <= sr << lanes;
-          rem <= rem - lanes[3:0];
+          // shift sr left by lanes_r: constant-index case avoids barrel shifter
+          case (lanes_r[2:0])
+            3'd1: sr <= {sr[6:0], 1'b0};
+            3'd2: sr <= {sr[5:0], 2'b0};
+            3'd3: sr <= {sr[4:0], 3'b0};
+            3'd4: sr <= {sr[3:0], 4'b0};
+            3'd5: sr <= {sr[2:0], 5'b0};
+            3'd6: sr <= {sr[1:0], 6'b0};
+            3'd7: sr <= {sr[0],   7'b0};
+            default: sr <= {sr[6:0], 1'b0};
+          endcase
+          rem <= rem - lanes_r[3:0];
         end
       end
     end else begin

@@ -252,7 +252,7 @@
       "InstLine" : 545,
       "InstName" : "rx",
       "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/multiflex_rx.v",
-      "ModuleLine" : 8,
+      "ModuleLine" : 21,
       "ModuleName" : "multiflex_rx"
      }
     ]
