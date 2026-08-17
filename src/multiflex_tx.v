@@ -17,7 +17,7 @@ module multiflex_tx #(
   // runtime config (from register block)
   input  wire                  cfg_enable,
   input  wire [4:0]            cfg_lanes,   // 1..NUM_LANES active lanes
-  input  wire [7:0]            cfg_clk_div, // wire clk half-period in fabric cycles minus 1
+  input  wire [13:0]           cfg_clk_div, // wire clk half-period in fabric cycles minus 1
 
   // TX push interface
   input  wire [7:0]            tx_byte,
@@ -98,7 +98,7 @@ module multiflex_tx #(
   // clock only runs when the FIFO has data or the state machine is active;
   // holds low otherwise so the clock is absent between transmissions
 
-  reg [7:0] div_cnt;
+  reg [13:0] div_cnt;
   reg       phase; // 0 = high half in progress, 1 = low half in progress
 
   // forward declarations needed before wire assignments that reference them

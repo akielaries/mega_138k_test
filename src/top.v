@@ -464,10 +464,12 @@ module top (
         .prdata  (mfx_prdata),
         .pready  (mfx_pready),
         .pslverr (),
-        .mfx_clk  (MFX_CLK_A),
-        .mfx_tx   (MFX_TX_A),
-        .mfx_sync (MFX_SYNC_A),
-        .mfx_rx   (MFX_TX_B)
+        .mfx_clk        (MFX_CLK_A),
+        .mfx_tx         (MFX_TX_A),
+        .mfx_sync       (MFX_SYNC_A),
+        .mfx_rx         (MFX_TX_B),
+        .mfx_clk_rx_in  (MFX_CLK_B),
+        .mfx_sync_rx_in (MFX_SYNC_B)
     );
 
     assign slave_PRDATA  = mfx_sel ? mfx_prdata  : memmap_prdata;

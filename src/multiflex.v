@@ -44,8 +44,12 @@ module multiflex #(
   output wire [NUM_LANES-1:0]  mfx_tx,
   output wire                  mfx_sync,
 
-  // wire inputs
-  input  wire [NUM_LANES-1:0]  mfx_rx
+  // wire inputs: RX data lanes
+  input  wire [NUM_LANES-1:0]  mfx_rx,
+
+  // wire inputs: external CLK/SYNC from remote transmitter (used when cfg_loopback=0)
+  input  wire                  mfx_clk_rx_in,
+  input  wire                  mfx_sync_rx_in
 );
 
   // --------------------------------------------------------------------------
@@ -97,14 +101,14 @@ module multiflex #(
   wire        cfg_enable_p;
   wire [4:0]  cfg_lanes_tx_p;
   wire [4:0]  cfg_lanes_rx_p;
-  wire [7:0]  cfg_clk_div_p;
+  wire [13:0] cfg_clk_div_p;
   wire        cfg_loopback_p;
   wire [10:0] tx_len_p;
 
   reg         cfg_enable_c0,    cfg_enable_c;
   reg  [4:0]  cfg_lanes_tx_c0,  cfg_lanes_tx_c;
   reg  [4:0]  cfg_lanes_rx_c0,  cfg_lanes_rx_c;
-  reg  [7:0]  cfg_clk_div_c0,   cfg_clk_div_c;
+  reg  [13:0] cfg_clk_div_c0,   cfg_clk_div_c;
   reg         cfg_loopback_c0,  cfg_loopback_c;
 
   always @(posedge clk) begin
@@ -112,7 +116,7 @@ module multiflex #(
       cfg_enable_c0   <= 1'b0;  cfg_enable_c   <= 1'b0;
       cfg_lanes_tx_c0 <= 5'd0;  cfg_lanes_tx_c <= 5'd0;
       cfg_lanes_rx_c0 <= 5'd0;  cfg_lanes_rx_c <= 5'd0;
-      cfg_clk_div_c0  <= 8'd0;  cfg_clk_div_c  <= 8'd0;
+      cfg_clk_div_c0  <= 14'd0; cfg_clk_div_c  <= 14'd0;
       cfg_loopback_c0 <= 1'b0;  cfg_loopback_c <= 1'b0;
     end else begin
       cfg_enable_c0   <= cfg_enable_p;    cfg_enable_c   <= cfg_enable_c0;
@@ -531,7 +535,8 @@ module multiflex #(
 
   // --------------------------------------------------------------------------
   // clk domain: loopback mux + multiflex_rx instantiation
-  // clock and sync always from TX engine; data switches between fabric and pins.
+  // in loopback mode: clk/sync/data from TX engine fabric copies (same clk domain)
+  // in external mode: clk/sync from remote transmitter pins, data from RX pins
   // mfx_clk_fabric/mfx_sync_fabric are FF outputs inside multiflex_tx that are
   // driven by the same flip-flop source as mfx_clk/mfx_sync but are NOT
   // connected to output pads, so Gowin cannot promote them to the global clock
@@ -540,7 +545,9 @@ module multiflex #(
   // --------------------------------------------------------------------------
   // loopback uses the fabric copy of mfx_tx (not the pad-facing FF) so the
   // placer keeps this path in the fabric, away from the output pad region
-  wire [NUM_LANES-1:0] rx_data_in = cfg_loopback_c ? mfx_tx_fabric : mfx_rx;
+  wire [NUM_LANES-1:0] rx_data_in = cfg_loopback_c ? mfx_tx_fabric   : mfx_rx;
+  wire                 rx_clk_in  = cfg_loopback_c ? mfx_clk_fabric  : mfx_clk_rx_in;
+  wire                 rx_sync_in = cfg_loopback_c ? mfx_sync_fabric : mfx_sync_rx_in;
 
   multiflex_rx #(.NUM_LANES(NUM_LANES)) rx (
     .clk         (clk),
@@ -548,9 +555,9 @@ module multiflex #(
     .cfg_enable  (cfg_enable_c),
     .cfg_lanes   (cfg_lanes_rx_c),
     .clr_rx      (clr_rx_c),
-    .mfx_clk_in  (mfx_clk_fabric),
+    .mfx_clk_in  (rx_clk_in),
     .mfx_rx_in   (rx_data_in),
-    .mfx_sync_in (mfx_sync_fabric),
+    .mfx_sync_in (rx_sync_in),
     .rx_byte     (rx_byte_c),
     .rx_valid    (rx_valid_c),
     .rx_locked   (rx_locked_c),

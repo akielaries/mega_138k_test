@@ -99,7 +99,7 @@ WARN  (EX1998) : Net 'tx_buf_data_ext_dat[7]' does not have a driver("/home/akie
 Compiling module 'multiflex_tx(NUM_LANES=2)'("/home/akiel/trunk/pub/mega_138k_test/src/multiflex_tx.v":11)
 Extracting RAM for identifier 'fifo'("/home/akiel/trunk/pub/mega_138k_test/src/multiflex_tx.v":57)
 WARN  (EX3791) : Expression size 6 truncated to fit in target size 5("/home/akiel/trunk/pub/mega_138k_test/src/multiflex_tx.v":86)
-WARN  (EX3791) : Expression size 32 truncated to fit in target size 8("/home/akiel/trunk/pub/mega_138k_test/src/multiflex_tx.v":184)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 14("/home/akiel/trunk/pub/mega_138k_test/src/multiflex_tx.v":184)
 WARN  (EX3791) : Expression size 6 truncated to fit in target size 5("/home/akiel/trunk/pub/mega_138k_test/src/multiflex_tx.v":248)
 WARN  (EX3791) : Expression size 6 truncated to fit in target size 5("/home/akiel/trunk/pub/mega_138k_test/src/multiflex_tx.v":315)
 Compiling module 'multiflex_rx(NUM_LANES=2)'("/home/akiel/trunk/pub/mega_138k_test/src/multiflex_rx.v":21)
@@ -130,8 +130,6 @@ WARN  (EX0211) : The output port "error_stat_o[2]" of module "prbs7_chk(INIT=8'b
 WARN  (EX0211) : The output port "error_stat_o[1]" of module "prbs7_chk(INIT=8'b11111111)" has no driver, assigning undriven bits to Z, simulation mismatch possible("/home/akiel/trunk/pub/mega_138k_test/src/prbs7_chk.v":51)
 WARN  (EX0211) : The output port "error_stat_o[0]" of module "prbs7_chk(INIT=8'b11111111)" has no driver, assigning undriven bits to Z, simulation mismatch possible("/home/akiel/trunk/pub/mega_138k_test/src/prbs7_chk.v":51)
 [5%] Running netlist conversion ...
-WARN  (CV0016) : Input MFX_SYNC_B is unused("/home/akiel/trunk/pub/mega_138k_test/src/top.v":26)
-WARN  (CV0016) : Input MFX_CLK_B is unused("/home/akiel/trunk/pub/mega_138k_test/src/top.v":27)
 Running device independent optimization ...
 [10%] Optimizing Phase 0 completed
 [15%] Optimizing Phase 1 completed

@@ -22,7 +22,7 @@ module multiflex_regs
     output  wire ctrl_enable_o,
     output  wire [4:0] ctrl_lanes_tx_o,
     output  wire [4:0] ctrl_lanes_rx_o,
-    output  wire [7:0] ctrl_clk_div_o,
+    output  wire [13:0] ctrl_clk_div_o,
     output  wire ctrl_loopback_o,
 
     // REG status
@@ -78,7 +78,7 @@ module multiflex_regs
   reg ctrl_enable_reg;
   reg [4:0] ctrl_lanes_tx_reg;
   reg [4:0] ctrl_lanes_rx_reg;
-  reg [7:0] ctrl_clk_div_reg;
+  reg [13:0] ctrl_clk_div_reg;
   reg ctrl_loopback_reg;
   reg ctrl_wreq;
   wire ctrl_wack;
@@ -169,7 +169,7 @@ module multiflex_regs
         ctrl_enable_reg <= 1'b0;
         ctrl_lanes_tx_reg <= 5'b00000;
         ctrl_lanes_rx_reg <= 5'b00000;
-        ctrl_clk_div_reg <= 8'b00000000;
+        ctrl_clk_div_reg <= 14'b00000000000000;
         ctrl_loopback_reg <= 1'b0;
       end
     else
@@ -178,8 +178,8 @@ module multiflex_regs
           ctrl_enable_reg <= wr_dat_d0[0];
           ctrl_lanes_tx_reg <= wr_dat_d0[5:1];
           ctrl_lanes_rx_reg <= wr_dat_d0[10:6];
-          ctrl_clk_div_reg <= wr_dat_d0[18:11];
-          ctrl_loopback_reg <= wr_dat_d0[19];
+          ctrl_clk_div_reg <= wr_dat_d0[24:11];
+          ctrl_loopback_reg <= wr_dat_d0[25];
         end
   end
 
@@ -412,9 +412,9 @@ module multiflex_regs
           rd_dat_d0[0] = ctrl_enable_reg;
           rd_dat_d0[5:1] = ctrl_lanes_tx_reg;
           rd_dat_d0[10:6] = ctrl_lanes_rx_reg;
-          rd_dat_d0[18:11] = ctrl_clk_div_reg;
-          rd_dat_d0[19] = ctrl_loopback_reg;
-          rd_dat_d0[31:20] = 12'b0;
+          rd_dat_d0[24:11] = ctrl_clk_div_reg;
+          rd_dat_d0[25] = ctrl_loopback_reg;
+          rd_dat_d0[31:26] = 6'b0;
         end
       11'b00000000001:
         begin

@@ -215,7 +215,7 @@
     "SubInsts" : [
      {
       "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/multiflex.v",
-      "InstLine" : 453,
+      "InstLine" : 457,
       "InstName" : "regs",
       "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/multiflex_regs.v",
       "ModuleLine" : 7,
@@ -241,7 +241,7 @@
      },
      {
       "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/multiflex.v",
-      "InstLine" : 513,
+      "InstLine" : 517,
       "InstName" : "tx",
       "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/multiflex_tx.v",
       "ModuleLine" : 11,
@@ -249,7 +249,7 @@
      },
      {
       "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/multiflex.v",
-      "InstLine" : 545,
+      "InstLine" : 552,
       "InstName" : "rx",
       "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/multiflex_rx.v",
       "ModuleLine" : 21,
@@ -259,7 +259,7 @@
    },
    {
     "InstFile" : "/home/akiel/trunk/pub/mega_138k_test/src/top.v",
-    "InstLine" : 486,
+    "InstLine" : 488,
     "InstName" : "sfp_inst",
     "ModuleFile" : "/home/akiel/trunk/pub/mega_138k_test/src/sfp_loopback.v",
     "ModuleLine" : 14,
